@@ -12,7 +12,11 @@ Route::get('test', function () {
     $lrv = app();
     $lrv = $lrv::VERSION;
 
-    $php = phpversion();
+    if (function_exists('phpversion')) {
+        $php = phpversion();
+    } else {
+        $php = '[hidden]';
+    }
 
     if (function_exists('mysqli_get_client_version')) {
 	    $sql = mysqli_get_client_version();
