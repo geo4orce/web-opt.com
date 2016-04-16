@@ -5,10 +5,11 @@ Route::get('/', function () {
 });
 
 Route::get('phpinfo', function () {
-	return phpinfo();
+    return phpinfo();
 });
 
 Route::get('test', function () {
+
     $lrv = app();
     $lrv = $lrv::VERSION;
 
@@ -19,22 +20,22 @@ Route::get('test', function () {
     }
 
     if (function_exists('mysqli_get_client_version')) {
-	    $sql = mysqli_get_client_version();
+        $sql = mysqli_get_client_version();
     } else {
-    	$sql = '[hidden]';
+        $sql = '[hidden]';
     }
 
     $out = <<<OUT
 
     <h1>Test OK!</h1>
-	Built with:
-	<ul>
-		<li>Laravel version $lrv
-		<li>PHP version $php
-		<li>MySql version $sql
+    Built with:
+    <ul>
+        <li>Laravel version $lrv
+        <li>PHP version $php
+        <li>MySql version $sql
 
 OUT;
-	return $out;
+    return $out;
 });
 
 // Test PHP7
