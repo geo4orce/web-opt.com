@@ -9,3 +9,4 @@ find /var/www -type f -exec chmod 0664 {} \;
 ToDo:
 # upgrade PHP
 # upgrade MySQL
+# set up SSH keys
