@@ -9,6 +9,23 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="{{ asset('img/logo.png') }}">
+        </div>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/clients">Clients</a> |
+            <a href="/contact">Contact</a> |
+        </nav>
+    </header>
     @yield('body')
+    <footer>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/clients">Clients</a> |
+            <a href="/contact">Contact</a> |
+        </nav>
+    </footer>
 </body>
 </html>
