@@ -11,21 +11,13 @@
 <body>
     <header>
         <h1>Web-Opt</h1>
-        <nav>
-            <a href="/">Home</a> |
-            <a href="/clients">Clients</a> |
-            <a href="/contact">Contact</a> |
-        </nav>
+        @include('shared.nav')
     </header>
     <section>
         @yield('body')
     </section>
     <footer>
-        <nav>
-            <a href="/">Home</a> |
-            <a href="/clients">Clients</a> |
-            <a href="/contact">Contact</a> |
-        </nav>
+        @include('shared.nav')
     </footer>
 </body>
 </html>

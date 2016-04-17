@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // variables available to all blades
         view()->share('PIPE', '|');
+        view()->share('URL', request()->path());
     }
 
     /**
