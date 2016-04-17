@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>Web-Opt</h1>
+        <h1>{{ env('APP_NAME') }}</h1>
         @include('shared.nav')
     </header>
     <div class="main">
