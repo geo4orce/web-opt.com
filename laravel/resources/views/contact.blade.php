@@ -5,5 +5,5 @@
 @endsection
 
 @section('body')
-    Contact
+    <img src="{{ asset('img/contacts.png') }}">
 @endsection
