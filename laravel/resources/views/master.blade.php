@@ -18,7 +18,7 @@
     </div>
     <footer>
         @include('shared.nav')
-        <div class="legal">© {{ date('Y') }} by Web-Opt. All Rights Reserved.</div>
+        <div class="legal">Web-Opt &copy; 2011-{{ date('Y') }}</div>
     </footer>
 </body>
 </html>
