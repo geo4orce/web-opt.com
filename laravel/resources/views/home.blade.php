@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('body')
-    home
+    <img src="{{ asset('img/logo.png') }}">
 @endsection
