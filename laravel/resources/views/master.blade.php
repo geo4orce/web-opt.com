@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/webflow.css">
     <link rel="stylesheet" type="text/css" href="css/web-opt.webflow.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script src="{{ asset('js/google-anal.js') }}" type="text/javascript"></script>
     <script>
     WebFont.load({
       google: {
