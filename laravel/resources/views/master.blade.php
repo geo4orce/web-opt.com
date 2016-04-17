@@ -13,9 +13,9 @@
         <h1>Web-Opt</h1>
         @include('shared.nav')
     </header>
-    <section>
+    <div class="main">
         @yield('body')
-    </section>
+    </div>
     <footer>
         @include('shared.nav')
     </footer>
