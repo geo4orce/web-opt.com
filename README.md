@@ -3,10 +3,11 @@
 Google-doc slides are here:
 https://docs.google.com/presentation/d/1-wT-pBCN385da9W3DJndAmlY5sriqc2NCqCoF94FH70/edit?usp=sharing
 
-Remote Box:
-chmod 2775 /var/www
-find /var/www -type d -exec chmod 2775 {} \;
-find /var/www -type f -exec chmod 0664 {} \;
+Remote Box commands:
+
+* chmod 2775 /var/www
+* find /var/www -type d -exec chmod 2775 {} \;
+* find /var/www -type f -exec chmod 0664 {} \;
 
 ToDo:
 
