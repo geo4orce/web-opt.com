@@ -10,16 +10,16 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="{{ asset('img/logo.png') }}">
-        </div>
+        <h1>Web-Opt</h1>
         <nav>
             <a href="/">Home</a> |
             <a href="/clients">Clients</a> |
             <a href="/contact">Contact</a> |
         </nav>
     </header>
-    @yield('body')
+    <section>
+        @yield('body')
+    </section>
     <footer>
         <nav>
             <a href="/">Home</a> |

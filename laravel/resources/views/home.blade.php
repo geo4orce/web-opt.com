@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('body')
-    home2
+    home
 @endsection
