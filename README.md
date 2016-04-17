@@ -5,6 +5,7 @@ https://docs.google.com/presentation/d/1-wT-pBCN385da9W3DJndAmlY5sriqc2NCqCoF94F
 
 Remote Box commands:
 
+* chown -R www-data:www-data /var/www
 * chmod 2775 /var/www
 * find /var/www -type d -exec chmod 2775 {} \;
 * find /var/www -type f -exec chmod 0664 {} \;
