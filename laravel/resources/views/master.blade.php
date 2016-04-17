@@ -7,7 +7,7 @@
     <meta property="og:title" content="W E B &amp; O P T">
     <meta property="og:description" content="Website Development and Optimization">
     <meta name="twitter:card" content="Website Development and Optimization">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1200px">
     <meta name="generator" content="SublimeText3">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/webflow.css">
