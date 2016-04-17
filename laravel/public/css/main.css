@@ -46,3 +46,7 @@ footer a:hover {
     text-decoration: none;
     background: lightblue;
 }
+.legal {
+    color: gray;
+    font-size: x-small;
+}
