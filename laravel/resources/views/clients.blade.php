@@ -5,5 +5,5 @@
 @endsection
 
 @section('body')
-    Clients
+    <img src="{{ asset('img/clients.png') }}">
 @endsection
