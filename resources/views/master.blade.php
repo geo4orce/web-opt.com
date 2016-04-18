@@ -10,8 +10,8 @@
     <meta property="og:description" content="{{ $slogan }}">
     <meta name="twitter:card" content="{{ $slogan }}">
     <meta name="viewport" content="width=1200px">
-    <meta name="generator" content="SublimeText3">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="generator" content="Sublime Text">
+    <meta name="robots" content="index,follow">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/webflow.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/web-opt.css') }}">
