@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/webflow.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/web-opt.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script src="{{ asset('js/google-anal.js') }}"></script>
+    @include('parts.ga')
     <script src="{{ asset('js/webfont.js') }}"></script>
     <script src="{{ asset('js/modernizr.js') }}"></script>
 </head>
