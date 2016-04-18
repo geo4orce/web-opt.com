@@ -10,6 +10,18 @@ Route::get('/', function() {
 });
 
 // Tests!!!!
+Route::get('test/write', function() {
+    // $file = '/var/www/lara/test.txt';
+    // $dir = '/var/www/lara';
+
+    // if (File::exists($myfile)) {
+    //     echo "Yup. It exists.";
+    // }
+    $bytes_written = File::put('~/lara-home2.txt', 'burger');
+    echo $bytes_written;
+});
+
+
 /*
 Route::get('test/test', function() {
     if (request()->is('test')) {

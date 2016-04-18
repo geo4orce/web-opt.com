@@ -1,3 +1,10 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+
+# Garbage
 ._*
 .DS_Store
 
