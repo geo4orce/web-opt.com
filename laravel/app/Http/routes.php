@@ -11,16 +11,16 @@ Route::get('/', function() {
 
 // Tests!!!!
 /*
-Route::get('test', function() {
+Route::get('test/test', function() {
     if (request()->is('test')) {
         echo 'yes';
     } else {
         echo 'no';
     }
 });
-Route::get('testok', 'Test@test');
-Route::get('phpinfo', 'Test@phpinfo');
-Route::get('php7',    'Test@php7');
+Route::get('test/testok', 'Test@test');
+Route::get('test/phpinfo', 'Test@phpinfo');
+Route::get('test/php7',    'Test@php7');
 */
 
 /* End of file */
