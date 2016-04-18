@@ -12,13 +12,13 @@
     <meta name="viewport" content="width=1200px">
     <meta name="generator" content="SublimeText3">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/webflow.css">
-    <link rel="stylesheet" type="text/css" href="css/web-opt.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/webflow.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/web-opt.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script src="js/google-anal.js"></script>
-    <script src="js/webfont.js"></script>
-    <script src="js/modernizr.js"></script>
+    <script src="{{ asset('js/google-anal.js') }}"></script>
+    <script src="{{ asset('js/webfont.js') }}"></script>
+    <script src="{{ asset('js/modernizr.js') }}"></script>
 </head>
 <body>
   <div id="section-home" class="w-section section-header">
@@ -74,7 +74,7 @@
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
+  <script type="text/javascript" src="{{ asset('js/webflow.js') }}"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
