@@ -61,7 +61,7 @@
   <div id="section-footer" class="w-section section-footer">
     <div class="copyrights">&copy; 2011-{{ date('Y') }} Web-Opt, LLC. All Rights Reserved.</div>
     <div class="weareglow-holder">
-      <h1>Contacts</h1>
+      <h1>Contact</h1>
       <div class="personal-contact">
         <div class="contact-name">Geo Artemenko | New York</div>
         <div class="contact-phone">+1 (929) 400-5006</div>
