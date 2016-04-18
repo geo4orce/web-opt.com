@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>{{ $title_wide }}</title>
     <meta name="description" content="{{ $slogan }}">
+    <meta name="keywords" content="www, web site, design, development, optimization">
+    <meta name="author" content="Geo Artemenko">
     <meta property="og:title" content="{{ $title_wide }}">
     <meta property="og:description" content="{{ $slogan }}">
     <meta name="twitter:card" content="{{ $slogan }}">
