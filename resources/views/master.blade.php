@@ -56,7 +56,7 @@
     </div>
   </div>
   <div id="section-footer" class="w-section section-footer">
-    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title }}, LLC. All Rights Reserved.</div>
+    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. All Rights Reserved.</div>
     <div class="weareglow-holder">
       <h1>Contact</h1>
       <div class="personal-contact">

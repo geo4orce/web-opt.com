@@ -4,6 +4,7 @@ Route::get('/', function() {
     $data = [
         'title' => 'Web&amp;Opt',
         'title_wide' => 'W E B &amp; O P T',
+        'title_legal' => 'Web-Opt, LLC',
         'slogan' => 'Website Development and Optimization',
     ];
     return view('master', $data);
