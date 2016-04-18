@@ -8,6 +8,14 @@ Please do not use password. Use rsa keys to connect to the server.
 
 Once on the server, please make sure to switch to www user, and only use root for exceptional cases.
 
+### Server Notes:
+
+There are 3 users to get introduced to: www, www-data, and root.
+
+* **www** is the user you should be using most of the time. Home in /home/www
+* **www-data** is the server user. Both www and www-data users are in the www-data *group*
+* **root** is root
+
 ### Server Commands:
 
 Change the owner of the whole /var/www folder to www and group to www-data (www user is part of the www-data group, so it's ok):
