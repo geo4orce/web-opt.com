@@ -31,7 +31,7 @@
         <div class="top-navigation">
             <a href="#section-home" class="top-navigation-link">Home</a>
             <a href="#section-works" class="top-navigation-link">Work</a>
-            <a href="#section-footer" class="top-navigation-link">Contacts</a>
+            <a href="#section-footer" class="top-navigation-link">Contact</a>
         </div>
       </div>
     </div>
