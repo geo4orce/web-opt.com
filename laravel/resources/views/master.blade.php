@@ -12,16 +12,10 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/webflow.css">
-    <link rel="stylesheet" type="text/css" href="css/web-opt.webflow.css">
+    <link rel="stylesheet" type="text/css" href="css/web-opt.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script src="js/google-anal.js"></script>
-    <script>
-        WebFont.load({
-          google: {
-            families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Montserrat:400,700"]
-          }
-        });
-    </script>
+    <script src="js/webfont.js"></script>
     <script src="js/modernizr.js"></script>
 </head>
 <body>
