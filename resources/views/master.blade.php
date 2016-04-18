@@ -47,7 +47,7 @@
         <a href="http://weareglow.com" target="_blank" class="work-link">www.weareglow.com</a>
       </div>
     </div>
-    <div class="work hooklogick">
+    <div class="work hooklogic">
       <div class="weareglow-holder">
         <h1>HookLogic</h1>
         <p class="work-description">Pioneer of performance marketing for brands, manufacturers and hotels. The company was founded in 2004 and is based in New York, with additional offices in California, United Kingdom and France.</p>
