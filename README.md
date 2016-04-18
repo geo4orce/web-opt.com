@@ -18,21 +18,25 @@ There are 3 users to get introduced to: www, www-data, and root.
 
 ### Server Commands:
 
-Change the owner of the whole /var/www folder to www and group to www-data (www user is part of the www-data group, so it's ok):
+Pull from BitBucket (please make sure to switch to www user first: `su www`!)
 
-`chown -R www:www-data /var/www`
+`cd /var/www/laravel && git pull`
 
-Change permissions of the /var/www folder to be editable by the owner and group.
+Change the owner of the whole /var/www/laravel folder to www and group to www-data (www user is part of the www-data group, so it's ok):
 
-`chmod 2775 /var/www`
+`chown -R www:www-data /var/www/laravel`
 
-Change permissions of all folders inside of the /var/www folder.
+Change permissions of the laravel folder to be editable by the owner and group.
 
-`find /var/www -type d -exec chmod 2775 {} \;`
+`chmod 2775 /var/www/laravel`
 
-Change permissions of all files inside of the /var/www folder.
+Change permissions of all folders inside of the laravel folder.
 
-`find /var/www -type f -exec chmod 0664 {} \;`
+`find /var/www/laravel -type d -exec chmod 2775 {} \;`
+
+Change permissions of all files inside of the laravel folder.
+
+`find /var/www/laravel -type f -exec chmod 0664 {} \;`
 
 ## Set up
 
