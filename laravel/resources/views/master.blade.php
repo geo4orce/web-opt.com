@@ -2,26 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>W E B &amp; O P T</title>
-    <meta name="description" content="Website Development and Optimization">
-    <meta property="og:title" content="W E B &amp; O P T">
-    <meta property="og:description" content="Website Development and Optimization">
-    <meta name="twitter:card" content="Website Development and Optimization">
+    <title>{{ $title_wide }}</title>
+    <meta name="description" content="{{ $slogan }}">
+    <meta property="og:title" content="{{ $title_wide }}">
+    <meta property="og:description" content="{{ $slogan }}">
+    <meta name="twitter:card" content="{{ $slogan }}">
     <meta name="viewport" content="width=1200px">
     <meta name="generator" content="SublimeText3">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/webflow.css">
     <link rel="stylesheet" type="text/css" href="css/web-opt.webflow.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script src="{{ asset('js/google-anal.js') }}" type="text/javascript"></script>
+    <script src="js/google-anal.js"></script>
     <script>
-    WebFont.load({
-      google: {
-        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Montserrat:400,700"]
-      }
-    });
+        WebFont.load({
+          google: {
+            families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Montserrat:400,700"]
+          }
+        });
     </script>
-    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script src="js/modernizr.js"></script>
 </head>
 <body>
   <div id="section-home" class="w-section section-header">
@@ -37,8 +37,8 @@
     </div>
     <div class="w-container">
       <div class="intro-holder">
-        <h1 class="intro-title">Web&amp;Opt</h1>
-        <div class="intro-description">Website Development and Optimization</div>
+        <h1 class="intro-title">{{ $title }}</h1>
+        <div class="intro-description">{{ $slogan }}</div>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
     </div>
   </div>
   <div id="section-footer" class="w-section section-footer">
-    <div class="copyrights">&copy; 2011-{{ date('Y') }} Web-Opt, LLC. All Rights Reserved.</div>
+    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title }}, LLC. All Rights Reserved.</div>
     <div class="weareglow-holder">
       <h1>Contact</h1>
       <div class="personal-contact">
