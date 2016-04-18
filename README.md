@@ -12,9 +12,9 @@ Once on the server, please make sure to switch to www user, and only use root fo
 
 There are 3 users to get introduced to: www, www-data, and root.
 
-* **www** is the user you should be using most of the time. Home in /home/www
-* **www-data** is the server user. Both www and www-data users are in the www-data *group*
-* **root** is root
+* **www** is the user you should be using most of the time. Home is /home/www folder.
+* **www-data** is the server (nginx) user. Home is /var/www folder. (Yes strange, so be careful with git tracking as it tends to create things in there, e.g. .bash_history). Both www and www-data users are in the www-data *group*, so in general it's a good idea to give all files in the /var/www folder www-data's group perminssions (see the Server Commands section below).
+* **root** is root [duh]
 
 ### Server Commands:
 
