@@ -9,6 +9,7 @@
     <meta name="twitter:card" content="{{ $slogan }}">
     <meta name="viewport" content="width=1200px">
     <meta name="generator" content="SublimeText3">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/webflow.css">
     <link rel="stylesheet" type="text/css" href="css/web-opt.webflow.css">
