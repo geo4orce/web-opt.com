@@ -10,3 +10,7 @@ Homestead.json
 
 # SFTP (Sublime plugin)
 sftp-config*.json
+
+# ignore IntelliJ
+.idea
+*.iml
