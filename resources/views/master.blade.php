@@ -62,7 +62,7 @@
       <div class="personal-contact">
         <div class="contact-name">Geo Artemenko | New York</div>
         <div class="contact-phone">+1 (929) 400-5006</div>
-        <div><a class="contact-email" href="mailto:geo.artemenko@gmail.com">geo.artemenko@gmail.com</a>
+        <div><a class="contact-email" href="mailto:geo@web-opt.com">geo@web-opt.com</a>
         </div>
       </div>
       <div class="personal-contact">
