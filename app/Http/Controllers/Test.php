@@ -13,10 +13,6 @@ class Test extends Controller
     	// return (int) (1 <=> 2);
     }
 
-    public function phpinfo() {
-    	return phpinfo();
-    }
-
     public function test() {
 
 	    $lrv = app();

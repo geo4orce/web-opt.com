@@ -12,6 +12,10 @@ Route::get('/', function() {
 
 // Tests!!!!
 
+// Route::get('test/phpinfo', function() {
+//     return phpinfo();
+// });
+
 // Route::get('test/write', function() {
 //     // $file = '/var/www/lara/test.txt';
 //     // $dir = '/var/www/lara';
