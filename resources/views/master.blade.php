@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+
+$title = 'Web&amp;Opt';
+$title_wide = 'W E B &amp; O P T';
+$title_legal = 'Web-Opt, LLC';
+$slogan = 'Website Development and Optimization';
+
+?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
