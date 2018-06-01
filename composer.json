@@ -1,20 +1,22 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "web-opt/web-opt",
+    "description": "Website Development and Optimization",
+    "keywords": ["www", "web site", "design", "development", "optimization"],
+    "license": "private",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "php": ">=5.5.9"
     },
     "require-dev": {
-        "symfony/dom-crawler": "~3.0",
-        "symfony/css-selector": "~3.0",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
+        "phpspec/phpspec": "~2.1",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "symfony/css-selector": "~3.0",
+        "symfony/dom-crawler": "~3.0",
+        "barryvdh/laravel-debugbar": "^2.4"
     },
     "autoload": {
         "classmap": [
