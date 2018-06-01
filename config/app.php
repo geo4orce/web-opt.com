@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://web-opt.com'),
+    'url' => env('APP_URL', 'https://web-opt.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'knJ0J68oRolr9dL6H2y5jJ2RbXsxp1cn'),
 
     'cipher' => 'AES-256-CBC',
 
