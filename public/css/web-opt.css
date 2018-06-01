@@ -112,9 +112,9 @@ body {
   background-repeat: no-repeat;
 }
 
-.work.hooklogic {
+.work.criteo {
   background-color: #717171;
-  background-image: url('../images/hooklogic.jpg');
+  background-image: url('../images/criteo.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@ body {
   width: 300px;
 }
 
-.weareglow-holder.hooklogic {
+.weareglow-holder.criteo {
   width: 260px;
 }
 

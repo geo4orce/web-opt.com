@@ -44,14 +44,14 @@
       <div class="weareglow-holder">
         <h1>Glow</h1>
         <p class="work-description">Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.</p>
-        <a href="http://weareglow.com" target="_blank" class="work-link">www.weareglow.com</a>
+        <a href="http://weareglow.com/" target="_blank" class="work-link">www.weareglow.com</a>
       </div>
     </div>
-    <div class="work hooklogic">
+    <div class="work criteo">
       <div class="weareglow-holder">
-        <h1>HookLogic</h1>
-        <p class="work-description">Pioneer of performance marketing for brands, manufacturers and hotels. The company was founded in 2004 and is based in New York, with additional offices in California, United Kingdom and France.</p>
-        <a href="http://hooklogic.com" target="_blank" class="work-link white">www.hooklogic.com</a>
+        <h1>Criteo</h1>
+        <p class="work-description">Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.</p>
+        <a href="https://www.criteo.com/" target="_blank" class="work-link white">www.criteo.com</a>
       </div>
     </div>
   </div>
