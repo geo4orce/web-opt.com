@@ -24,7 +24,7 @@ body {
   margin-left: 14px;
   padding-top: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, .1);
-  color: #000;
+  color: #006ffc;
   line-height: 14px;
   text-decoration: none;
 }
@@ -70,7 +70,7 @@ body {
   padding: 1500px 18px 11px;
   background-color: #cbcbcb;
   background-image: url('../images/cards.jpg');
-  background-position: 50% 0px;
+  background-position: 50% 0;
   background-size: 1400px;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -86,7 +86,7 @@ body {
 .section-portfolio {
   min-height: 1500px;
   background-image: url('../images/cards-gradient-fff-a3a3a3.jpg');
-  background-position: 50% 0px;
+  background-position: 50% 0;
   background-size: cover;
 }
 
