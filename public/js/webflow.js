@@ -3218,10 +3218,11 @@
 	  function findEl(hash, e) {
 	    if (!validHash.test(hash)) return;
 
-	    var el = $('#' + hash);
+	    var el = $('#section-' + hash);
 	    if (!el.length) {
 	      return;
 	    }
+        updateDocTitle(hash);
 
 	    if (e) {
 	      e.preventDefault();

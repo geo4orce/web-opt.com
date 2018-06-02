@@ -9,7 +9,7 @@ $slogan = 'Website Development and Optimization';
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{{ $title_wide }}</title>
+    <title>Home | {{ $title_wide }}</title>
     <meta name="description" content="{{ $slogan }}">
     <meta name="keywords" content="www, web site, design, development, optimization">
     <meta name="author" content="Geo Artemenko">
@@ -23,9 +23,9 @@ $slogan = 'Website Development and Optimization';
     <link rel="stylesheet" type="text/css" href="{{ asset('css/webflow.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/web-opt.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    @include('parts.ga')
     <script src="{{ asset('js/webfont.js') }}"></script>
     <script src="{{ asset('js/modernizr.js') }}"></script>
+    @include('parts.ga')
 </head>
 <body>
   <div id="section-home" class="w-section section-header">
@@ -33,9 +33,12 @@ $slogan = 'Website Development and Optimization';
       <div class="w-col w-col-6"></div>
       <div class="w-col w-col-6 w-clearfix">
         <div class="top-navigation">
-            <a href="#section-home" class="top-navigation-link">Home</a>
-            <a href="#section-works" class="top-navigation-link">Work</a>
-            <a href="#section-footer" class="top-navigation-link">Contact</a>
+
+            {{-- works with "#section-xxx", @see public/js/webflow.js:3221 --}}
+            <a href="#home" class="top-navigation-link">Home</a>
+            <a href="#work" class="top-navigation-link">Work</a>
+            <a href="#contact" class="top-navigation-link">Contact</a>
+
         </div>
       </div>
     </div>
@@ -46,7 +49,7 @@ $slogan = 'Website Development and Optimization';
       </div>
     </div>
   </div>
-  <div id="section-works" class="w-section section-works">
+  <div id="section-work" class="w-section section-works">
     <div class="work weareglow">
       <div class="weareglow-holder">
         <h1>Glow</h1>
@@ -62,7 +65,7 @@ $slogan = 'Website Development and Optimization';
       </div>
     </div>
   </div>
-  <div id="section-footer" class="w-section section-footer">
+  <div id="section-contact" class="w-section section-footer">
     <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. All Rights Reserved.</div>
     <div class="weareglow-holder">
       <h1>Contact</h1>
