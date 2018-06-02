@@ -26,15 +26,15 @@ Change the owner of the whole /var/www/web-opt.com folder to www and group to ww
 
 `chown -R www:www-data /var/www/web-opt.com`
 
-Change permissions of the laravel folder to be editable by the owner and group.
+Change permissions of the web-root folder to be editable by the owner and group.
 
 `chmod 2775 /var/www/web-opt.com`
 
-Change permissions of all folders inside of the laravel folder.
+Change permissions of all folders inside of the web-root folder.
 
 `find /var/www/web-opt.com -type d -exec chmod 2775 {} \;`
 
-Change permissions of all files inside of the laravel folder.
+Change permissions of all files inside of the web-root folder.
 
 `find /var/www/web-opt.com -type f -exec chmod 0664 {} \;`
 
