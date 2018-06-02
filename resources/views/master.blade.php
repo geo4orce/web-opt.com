@@ -1,7 +1,7 @@
 <?php
 
-$title = 'Web&amp;Opt';
-$title_wide = 'W E B &amp; O P T';
+$title = 'Web&Opt';
+$title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
 $slogan = 'Website Development and Optimization';
 
@@ -16,7 +16,7 @@ $slogan = 'Website Development and Optimization';
     <meta property="og:title" content="{{ $title_wide }}">
     <meta property="og:description" content="{{ $slogan }}">
     <meta name="twitter:card" content="{{ $slogan }}">
-    <meta name="viewport" content="width=1200px">
+    <meta name="viewport" content="width=1200">
     <meta name="generator" content="Sublime Text">
     <meta name="robots" content="index,follow">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}">

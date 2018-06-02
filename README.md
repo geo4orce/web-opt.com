@@ -13,30 +13,30 @@ Once on the server, please make sure to switch to www user, and only use root fo
 There are 3 users to get introduced to: www, www-data, and root.
 
 * **www** is the user you should be using most of the time. Home is /var/www folder (not /home/www even though it exists!). Yes, this is strange, so be careful with git tracking as things may get created in this home dir, e.g. a .bash_history file or .cache folder.
-* **www-data** is the server (nginx) user. You cannot `su` into this user though. Home is /var/www/laravel/public folder. Both www and www-data users are in the www-data *group*, so in general it's a good idea to make sure that all files in the /var/www folder have www-data's group permissions for read and write (see the Server Commands section below).
+* **www-data** is the server (nginx) user. You cannot `su` into this user though. Home is /var/www/web-opt.com/public folder. Both www and www-data users are in the www-data *group*, so in general it's a good idea to make sure that all files in the /var/www folder have www-data's group permissions for read and write (see the Server Commands section below).
 * **root** is root [duh]
 
 ### Server Commands:
 
 Pull from BitBucket (please make sure to switch to www user first: `su www`!)
 
-`cd /var/www/laravel && git pull`
+`cd /var/www/web-opt.com && git pull`
 
-Change the owner of the whole /var/www/laravel folder to www and group to www-data (www user is part of the www-data group, so it's ok):
+Change the owner of the whole /var/www/web-opt.com folder to www and group to www-data (www user is part of the www-data group, so it's ok):
 
-`chown -R www:www-data /var/www/laravel`
+`chown -R www:www-data /var/www/web-opt.com`
 
 Change permissions of the laravel folder to be editable by the owner and group.
 
-`chmod 2775 /var/www/laravel`
+`chmod 2775 /var/www/web-opt.com`
 
 Change permissions of all folders inside of the laravel folder.
 
-`find /var/www/laravel -type d -exec chmod 2775 {} \;`
+`find /var/www/web-opt.com -type d -exec chmod 2775 {} \;`
 
 Change permissions of all files inside of the laravel folder.
 
-`find /var/www/laravel -type f -exec chmod 0664 {} \;`
+`find /var/www/web-opt.com -type f -exec chmod 0664 {} \;`
 
 ## Set up
 
