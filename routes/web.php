@@ -1,5 +1,3 @@
 <?php
 
-Route::get('/', function () {
-    return view('master');
-});
+Route::get('/', 'MasterController@index');
