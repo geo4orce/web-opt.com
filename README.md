@@ -42,7 +42,13 @@ Change permissions of all files inside of the web-root folder.
 
 * git clone
 * composer install
-* download and adjust the .env file. It's on the server but not git tracked. Contact me for questions.
+
+## Deployment
+
+* composer install --optimize-autoloader --no-dev
+* php artisan config:cache
+* php artisan route:cache
+* php artisan queue:restart
 
 ## Contact
 
