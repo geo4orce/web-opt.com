@@ -1,56 +1,76 @@
-# README
+# Web-Opt
 
 This is the web-opt.com repo. Please be polite and respectful to the elderly.
 
-## Server
+## Login to Server
 
-Please do not use password. Use rsa keys to connect to the server.
+Password ssh is disabled. Use ssh keys to connect to the server:
 
-Once on the server, please make sure to switch to www user, and only use root for exceptional cases.
+`ssh -i ~/.ssh/id_rsa geo@web-opt.com`
 
-### Server Notes:
+Once inside the server, switch to **www-data** user (no password needed) to edit the web files:
 
-There are 3 users to get introduced to: www, www-data, and root.
+`sudo -su www-data`
 
-* **www** is the user you should be using most of the time. Home is /var/www folder (not /home/www even though it exists!). Yes, this is strange, so be careful with git tracking as things may get created in this home dir, e.g. a .bash_history file or .cache folder.
-* **www-data** is the server (nginx) user. You cannot `su` into this user though. Home is /var/www/web-opt.com/public folder. Both www and www-data users are in the www-data *group*, so in general it's a good idea to make sure that all files in the /var/www folder have www-data's group permissions for read and write (see the Server Commands section below).
-* **root** is root [duh]
+If ever need root actions (password required), do:
 
-### Server Commands:
+`sudo su -`
 
-Pull from BitBucket (please make sure to switch to www user first: `su www`!)
+## Server Commands (as www-data user)
 
-`cd /var/www/web-opt.com && git pull`
+Pull from BitBucket repo, prod from master branch:
 
-Change the owner of the whole /var/www/web-opt.com folder to www and group to www-data (www user is part of the www-data group, so it's ok):
+`git -C /var/www/web-opt.com pull`
 
-`chown -R www:www-data /var/www/web-opt.com`
+stage from develop branch:
 
-Change permissions of the web-root folder to be editable by the owner and group.
+`git -C /var/www/stage.web-opt.com pull`
 
-`chmod 2775 /var/www/web-opt.com`
+## Troubleshooting
 
-Change permissions of all folders inside of the web-root folder.
+If ever issues, try doing this **as root**:
 
-`find /var/www/web-opt.com -type d -exec chmod 2775 {} \;`
+### prod
 
-Change permissions of all files inside of the web-root folder.
+```
+chown -R www-data:www-data /var/www/web-opt.com && \
+chmod 2755 /var/www/web-opt.com && \
+find /var/www/web-opt.com -type d -exec chmod 2755 {} \; && \
+find /var/www/web-opt.com -type f -exec chmod 0644 {} \; && \
+chmod -R 777 /var/www/web-opt.com/bootstrap/cache && \
+chmod -R 777 /var/www/web-opt.com/storage
+```
 
-`find /var/www/web-opt.com -type f -exec chmod 0664 {} \;`
+### stage
 
-## Set up
+```
+chown -R www-data:www-data /var/www/stage.web-opt.com && \
+chmod 2755 /var/www/stage.web-opt.com && \
+find /var/www/stage.web-opt.com -type d -exec chmod 2755 {} \; && \
+find /var/www/stage.web-opt.com -type f -exec chmod 0644 {} \; && \
+chmod -R 777 /var/www/stage.web-opt.com/bootstrap/cache && \
+chmod -R 777 /var/www/stage.web-opt.com/storage
+```
 
-* git clone
-* composer install
+## Local or stage set up
+
+* `git clone`
+* `php artisan env` --> should be "local" or "staging"
+* `composer install`
+* `php artisan clear-compiled`
+* `php artisan cache:clear`
+* `php artisan config:clear`
+* `php artisan route:clear`
+* `php artisan view:clear`
 
 ## Deployment
 
-* composer install --optimize-autoloader --no-dev
-* php artisan config:cache
-* php artisan route:cache
-* php artisan queue:restart
+* `composer install --optimize-autoloader --no-dev`
+* `php artisan config:cache`
+* `php artisan route:cache`
+* `php artisan queue:restart`
 
 ## Contact
 
-* geo.artemenko@gmail.com
-* kirill@artemenko.info
+* [geo@web-opt.com](mailto:geo@web-opt.com)
+* [kirill@artemenko.ru](mailto:kirill@artemenko.ru)
