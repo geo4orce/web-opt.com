@@ -80,7 +80,7 @@ $work2 = __('work2');
     </div>
 </div>
 <div id="section-contact" class="w-section section-footer">
-    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All Rights Reserved').</div>
+    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All rights reserved').</div>
     <div class="weareglow-holder">
         <h2>@lang('Contact')</h2>
         <div class="personal-contact">
