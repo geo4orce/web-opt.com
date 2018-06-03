@@ -12,6 +12,14 @@ Once inside the server, switch to **www-data** user (no password needed) to edit
 
 `sudo -su www-data`
 
+and go to prod folder:
+
+`cd /var/www/web-opt.com`
+
+or stage:
+
+`cd /var/www/stage.web-opt.com`
+
 If ever need root actions (password required), do:
 
 `sudo su -`
