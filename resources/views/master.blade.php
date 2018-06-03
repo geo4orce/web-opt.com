@@ -66,33 +66,43 @@ $work2 = __('work2');
 <div class="w-section section-works">
     <div id="section-work1" class="work weareglow">
         <div class="weareglow-holder">
-            <h1>Glow</h1>
+            <h2>Glow</h2>
             <p class="work-description">{{ $work1 }}</p>
             <a href="http://weareglow.com/" target="_blank" class="work-link">www.weareglow.com</a>
         </div>
     </div>
     <div id="section-work2" class="work criteo">
         <div class="weareglow-holder">
-            <h1>Criteo</h1>
+            <h2>Criteo</h2>
             <p class="work-description">{{ $work2 }}</p>
             <a href="https://www.criteo.com/" target="_blank" class="work-link white">www.criteo.com</a>
         </div>
     </div>
 </div>
 <div id="section-contact" class="w-section section-footer">
-    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. All Rights Reserved.</div>
+    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All Rights Reserved').</div>
     <div class="weareglow-holder">
-        <h1>Contact</h1>
+        <h2>@lang('Contact')</h2>
         <div class="personal-contact">
-            <div class="contact-name">Geo Artemenko | New York</div>
-            <div class="contact-phone">+1 (929) 400-5006</div>
-            <div><a class="contact-email" href="mailto:geo@web-opt.com">geo@web-opt.com</a>
+            <div class="contact-name">
+                @lang('Geo Artemenko | New York')
+            </div>
+            <div class="contact-phone">
+                +1 (929) 400-5006
+            </div>
+            <div>
+                <a class="contact-email" href="mailto:geo@web-opt.com">geo@web-opt.com</a>
             </div>
         </div>
         <div class="personal-contact">
-            <div class="contact-name">Kirill Artemenko | Moscow</div>
-            <div class="contact-phone">+7 (919) 993-9240</div>
-            <div><a class="contact-email" href="mailto:kirill@artemenko.info">kirill@artemenko.info</a>
+            <div class="contact-name">
+                @lang('Kirill Artemenko | Moscow')
+            </div>
+            <div class="contact-phone">
+                +7 (919) 993-9240
+            </div>
+            <div>
+                <a class="contact-email" href="mailto:kirill@artemenko.ru">kirill@artemenko.ru</a>
             </div>
         </div>
     </div>
