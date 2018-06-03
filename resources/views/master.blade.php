@@ -4,6 +4,8 @@ $h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
 $slogan = 'Website Development and Optimization';
+$work1 = __('work1');
+$work2 = __('work2');
 
 ?>
 <!DOCTYPE html>
@@ -33,18 +35,23 @@ $slogan = 'Website Development and Optimization';
     <div class="w-row">
         <div class="w-col w-col-6">
             <div class="language-switcher">
-                <div>&#9663; En</div>
-                <a href="/ru">Ru</a>
+                @if(app()->isLocale('en'))
+                    <div>&#9663; En</div>
+                    <a href="/ru">Ru</a>
+                @else
+                    <div>&#9663; Ru</div>
+                    <a href="/">En</a>
+                @endif
             </div>
         </div>
         <div class="w-col w-col-6 w-clearfix">
             <div class="top-navigation">
 
                 {{-- works with "#section-xxx", @see public/js/webflow.js:3221 --}}
-                <a href="#home" class="top-navigation-link">Home</a>
-                <a href="#work1" class="top-navigation-link">Work 1</a>
-                <a href="#work2" class="top-navigation-link">Work 2</a>
-                <a href="#contact" class="top-navigation-link">Contact</a>
+                <a href="#home" class="top-navigation-link">@lang('Home')</a>
+                <a href="#work1" class="top-navigation-link">@lang('Work') 1</a>
+                <a href="#work2" class="top-navigation-link">@lang('Work') 2</a>
+                <a href="#contact" class="top-navigation-link">@lang('Contact')</a>
 
             </div>
         </div>
@@ -60,14 +67,14 @@ $slogan = 'Website Development and Optimization';
     <div id="section-work1" class="work weareglow">
         <div class="weareglow-holder">
             <h1>Glow</h1>
-            <p class="work-description">Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.</p>
+            <p class="work-description">{{ $work1 }}</p>
             <a href="http://weareglow.com/" target="_blank" class="work-link">www.weareglow.com</a>
         </div>
     </div>
     <div id="section-work2" class="work criteo">
         <div class="weareglow-holder">
             <h1>Criteo</h1>
-            <p class="work-description">Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.</p>
+            <p class="work-description">{{ $work2 }}</p>
             <a href="https://www.criteo.com/" target="_blank" class="work-link white">www.criteo.com</a>
         </div>
     </div>
