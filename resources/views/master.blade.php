@@ -36,7 +36,8 @@ $slogan = 'Website Development and Optimization';
 
             {{-- works with "#section-xxx", @see public/js/webflow.js:3221 --}}
             <a href="#home" class="top-navigation-link">Home</a>
-            <a href="#work" class="top-navigation-link">Work</a>
+            <a href="#work1" class="top-navigation-link">Work 1</a>
+            <a href="#work2" class="top-navigation-link">Work 2</a>
             <a href="#contact" class="top-navigation-link">Contact</a>
 
         </div>
@@ -49,15 +50,15 @@ $slogan = 'Website Development and Optimization';
       </div>
     </div>
   </div>
-  <div id="section-work" class="w-section section-works">
-    <div class="work weareglow">
+  <div class="w-section section-works">
+    <div id="section-work1" class="work weareglow">
       <div class="weareglow-holder">
         <h1>Glow</h1>
         <p class="work-description">Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.</p>
         <a href="http://weareglow.com/" target="_blank" class="work-link">www.weareglow.com</a>
       </div>
     </div>
-    <div class="work criteo">
+    <div id="section-work2" class="work criteo">
       <div class="weareglow-holder">
         <h1>Criteo</h1>
         <p class="work-description">Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.</p>
