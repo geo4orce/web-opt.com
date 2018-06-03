@@ -28,7 +28,7 @@ stage from develop branch:
 
 ## Troubleshooting
 
-If ever issues, try doing this **as root**:
+If ever issues, try doing this **as root** (may take a bit):
 
 ### prod
 
@@ -37,8 +37,8 @@ chown -R www-data:www-data /var/www/web-opt.com && \
 chmod 2755 /var/www/web-opt.com && \
 find /var/www/web-opt.com -type d -exec chmod 2755 {} \; && \
 find /var/www/web-opt.com -type f -exec chmod 0644 {} \; && \
-chmod -R 777 /var/www/web-opt.com/bootstrap/cache && \
-chmod -R 777 /var/www/web-opt.com/storage
+cd /var/www/web-opt.com && \
+chmod -R 777 bootstrap/cache storage
 ```
 
 ### stage
@@ -48,8 +48,8 @@ chown -R www-data:www-data /var/www/stage.web-opt.com && \
 chmod 2755 /var/www/stage.web-opt.com && \
 find /var/www/stage.web-opt.com -type d -exec chmod 2755 {} \; && \
 find /var/www/stage.web-opt.com -type f -exec chmod 0644 {} \; && \
-chmod -R 777 /var/www/stage.web-opt.com/bootstrap/cache && \
-chmod -R 777 /var/www/stage.web-opt.com/storage
+cd /var/www/stage.web-opt.com && \
+chmod -R 777 bootstrap/cache storage
 ```
 
 ## Local or stage set up
