@@ -1,6 +1,6 @@
 <?php
 
-$title = 'Web&Opt';
+$h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
 $slogan = 'Website Development and Optimization';
@@ -11,12 +11,12 @@ $slogan = 'Website Development and Optimization';
 <head>
     <meta charset="utf-8">
     <title>Home | {{ $title_wide }}</title>
-    <meta name="description" content="{{ $slogan }}">
+    <meta name="description" content="@lang($slogan)">
     <meta name="keywords" content="www, web site, design, development, optimization">
     <meta name="author" content="Geo Artemenko">
     <meta property="og:title" content="{{ $title_wide }}">
-    <meta property="og:description" content="{{ $slogan }}">
-    <meta name="twitter:card" content="{{ $slogan }}">
+    <meta property="og:description" content="@lang($slogan)">
+    <meta name="twitter:card" content="@lang($slogan)">
     <meta name="viewport" content="width=1200">
     <meta name="generator" content="Sublime Text">
     <meta name="robots" content="index,follow">
@@ -51,8 +51,8 @@ $slogan = 'Website Development and Optimization';
     </div>
     <div class="w-container">
         <div class="intro-holder">
-            <h1 class="intro-title">{{ $title }}</h1>
-            <div class="intro-description">{{ $slogan }}</div>
+            <h1 class="intro-title">{{ $h1 }}</h1>
+            <div class="intro-description">@lang($slogan)</div>
         </div>
     </div>
 </div>

@@ -8,4 +8,9 @@ class MasterController extends Controller
     {
         return view('master');
     }
+    public function ru()
+    {
+        app()->setLocale('ru');
+        return view('master');
+    }
 }
