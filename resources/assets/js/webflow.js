@@ -2522,7 +2522,7 @@
 
 	    // Check for valid hash links w/ sections and use scroll anchor
 	    if (href.indexOf('#') === 0 && validHash.test(href)) {
-	      var $section = $(href);
+	      var $section = $("#section-" + href.substr(1));
 	      $section.length && anchors.push({ link: $link, sec: $section, active: false });
 	      return;
 	    }
@@ -3238,7 +3238,7 @@
 	    ) {
 	      var oldHash = history.state && history.state.hash;
 	      if (oldHash !== hash) {
-	        history.pushState({ hash: hash }, '', '#' + hash);
+	        history.pushState({ hash: hash }, '', '#section-' + hash);
 	      }
 	    }
 

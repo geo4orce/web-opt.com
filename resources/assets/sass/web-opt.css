@@ -91,7 +91,7 @@ body {
   position: relative;
   padding: 1500px 18px 11px;
   background-color: #cbcbcb;
-  background-image: url('../images/cards.jpg');
+  background-image: url('./images/cards.jpg');
   background-position: 50% 0;
   background-size: 1400px;
   background-repeat: no-repeat;
@@ -107,7 +107,7 @@ body {
 
 .section-portfolio {
   min-height: 1500px;
-  background-image: url('../images/cards-gradient-fff-a3a3a3.jpg');
+  background-image: url('./images/cards-gradient-fff-a3a3a3.jpg');
   background-position: 50% 0;
   background-size: cover;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 .work.weareglow {
-  background-image: url('../images/weareglow.jpg');
+  background-image: url('./images/weareglow.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -136,7 +136,7 @@ body {
 
 .work.criteo {
   background-color: #717171;
-  background-image: url('../images/criteo.jpg');
+  background-image: url('./images/criteo.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;

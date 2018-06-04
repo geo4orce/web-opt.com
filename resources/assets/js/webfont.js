@@ -16,3 +16,4 @@ function updateDocTitle(hash) {
     document.title = t.join(pipe);
 }
 updateDocTitle(window.location.hash.substr(1) || 'home');
+window.updateDocTitle = updateDocTitle; // make it global
