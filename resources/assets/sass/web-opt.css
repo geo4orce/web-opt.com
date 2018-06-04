@@ -38,32 +38,6 @@ body {
   border-bottom-color: #000;
 }
 
-
-/* language switcher */
-.language-switcher {
-  cursor: default;
-  display: inline-block;
-  font-size: 11px;
-  text-align: center;
-  width: 50px;
-}
-.language-switcher > a {
-  background: #eee;
-  color: #000;
-  display: none;
-  position: absolute;
-  text-decoration: none;
-  width: 50px;
-}
-.language-switcher:hover > a {
-  display: block;
-}
-.language-switcher > a:hover {
-  background: #006ffc;
-  color: #fff;
-}
-
-
 .intro-holder {
   padding-top: 45%;
 }
