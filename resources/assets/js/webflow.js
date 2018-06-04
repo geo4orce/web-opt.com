@@ -3238,7 +3238,7 @@
 	    ) {
 	      var oldHash = history.state && history.state.hash;
 	      if (oldHash !== hash) {
-	        history.pushState({ hash: hash }, '', '#section-' + hash);
+	        history.pushState({ hash: hash }, '', '#' + hash);
 	      }
 	    }
 

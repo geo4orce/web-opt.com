@@ -21,7 +21,7 @@ $work2 = __('work2');
     <meta name="twitter:card" content="@lang($slogan)">
     <meta name="viewport" content="width=1200">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="/amp">
+    <link rel="canonical" href="/amp{{ app()->isLocale('en') ? '' : '/ru' }}">
     <link rel="stylesheet" type="text/css" href="{{ elixir('/css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script src="{{ elixir('/js/head.js') }}"></script>
