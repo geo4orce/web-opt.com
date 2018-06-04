@@ -20,7 +20,7 @@ $work2 = __('work2');
     <meta property="og:description" content="@lang($slogan)">
     <meta name="twitter:card" content="@lang($slogan)">
     <meta name="viewport" content="width=1200">
-    <meta name="robots" content="index,follow">
+    <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="/amp{{ app()->isLocale('en') ? '' : '/ru' }}">
     <link rel="stylesheet" type="text/css" href="{{ elixir('build/css/app.css', '') }}">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
