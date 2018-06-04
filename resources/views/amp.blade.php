@@ -40,13 +40,10 @@ $work2 = __('work2');
         </div>
         <div class="w-col w-col-6 w-clearfix">
             <div class="top-navigation">
-
-                {{-- works with "#section-xxx", @see public/js/webflow.js:3221 --}}
                 <a href="#home" class="top-navigation-link">@lang('Home')</a>
                 <a href="#work1" class="top-navigation-link">@lang('Work') 1</a>
                 <a href="#work2" class="top-navigation-link">@lang('Work') 2</a>
                 <a href="#contact" class="top-navigation-link">@lang('Contact')</a>
-
             </div>
         </div>
     </div>

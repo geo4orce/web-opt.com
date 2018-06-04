@@ -28,11 +28,11 @@ If ever need root actions (password required), do:
 
 Pull from BitBucket repo, prod from master branch:
 
-`git -C /var/www/web-opt.com pull`
+`git -C /var/www/web-opt.com pull && npm run prod`
 
 stage from develop branch:
 
-`git -C /var/www/stage.web-opt.com pull`
+`git -C /var/www/stage.web-opt.com pull & npm run dev`
 
 ## Troubleshooting
 

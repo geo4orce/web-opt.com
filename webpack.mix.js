@@ -11,8 +11,8 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/head.js', 'public/js')
-    .js('resources/assets/js/foot.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
+mix.js('resources/assets/js/head.js', 'public/build/js')
+    .js('resources/assets/js/foot.js', 'public/build/js')
+    .sass('resources/assets/sass/app.scss', 'public/build/css')
     .version()
 ;
