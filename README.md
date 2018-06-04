@@ -28,11 +28,11 @@ If ever need root actions (password required), do:
 
 Pull from BitBucket repo, prod from master branch:
 
-`git -C /var/www/web-opt.com pull && npm run prod`
+`git -C /var/www/web-opt.com pull`
 
 stage from develop branch:
 
-`git -C /var/www/stage.web-opt.com pull & npm run dev`
+`git -C /var/www/stage.web-opt.com pull`
 
 ## Troubleshooting
 
@@ -70,9 +70,15 @@ chmod -R 777 bootstrap/cache storage
 * `php artisan config:clear`
 * `php artisan route:clear`
 * `php artisan view:clear`
+* `npm install`
+* `npm run dev`
 
 ## Deployment
 
+Before commiting into master run:
+`npm run prod`
+
+Then on server run:
 * `composer install --optimize-autoloader --no-dev`
 * `php artisan config:cache`
 * `php artisan route:cache`
