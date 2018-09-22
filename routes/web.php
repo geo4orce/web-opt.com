@@ -1,6 +1,13 @@
 <?php
 
-Route::get('/', 'MasterController@index');
-Route::get('ru', 'MasterController@ru');
-Route::get('amp', 'AmpController@index');
-Route::get('amp/ru', 'AmpController@ru');
+Route::get('/', 'MasterController@index')
+    ->name('home');
+
+Route::get('ru', 'MasterController@ru')
+    ->name('ru-home');
+
+Route::get('amp', 'AmpController@index')
+    ->name('home-amp');
+
+Route::get('ru/amp', 'AmpController@ru')
+    ->name('ru-home-amp');

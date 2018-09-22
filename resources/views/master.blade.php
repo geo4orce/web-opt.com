@@ -1,5 +1,8 @@
 <?php
 
+$locale = app()->isLocale('en') ? '' : '/ru';
+$canonicalUrl = config('app.url') . $locale;
+
 $h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
@@ -21,7 +24,7 @@ $work2 = __('work2');
     <meta name="twitter:card" content="@lang($slogan)">
     <meta name="viewport" content="width=1200">
     <meta name="robots" content="{{ config('view.robots') }}">
-    <link rel="canonical" href="/amp{{ app()->isLocale('en') ? '' : '/ru' }}">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="stylesheet" type="text/css" href="{{ elixir('build/css/app.css', '') }}">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script type="text/javascript" src="{{ elixir('build/js/head.js', '') }}"></script>
@@ -31,11 +34,7 @@ $work2 = __('work2');
 <div id="section-home" class="w-section section-header">
     <div class="w-row">
         <div class="w-col w-col-6">
-            @if(app()->isLocale('en'))
-                <a href="/ru" class="top-navigation-link">Ru</a>
-            @else
-                <a href="/" class="top-navigation-link">En</a>
-            @endif
+            @include('components.lang')
         </div>
         <div class="w-col w-col-6 w-clearfix">
             <div class="top-navigation">
