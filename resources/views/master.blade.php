@@ -2,6 +2,7 @@
 
 $locale = app()->isLocale('en') ? '' : '/ru';
 $canonicalUrl = config('app.url') . $locale;
+$favicon = 'favicon1.png';
 
 $h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
@@ -25,7 +26,7 @@ $work2 = __('work2');
     <meta name="viewport" content="width=1200">
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="{{ $favicon }}" />
     <link rel="stylesheet" type="text/css" href="{{ elixir('build/css/app.css', '') }}">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script type="text/javascript" src="{{ elixir('build/js/head.js', '') }}"></script>
