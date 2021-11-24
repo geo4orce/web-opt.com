@@ -1,7 +1,6 @@
 <?php
 
-$locale = app()->isLocale('en') ? '' : '/ru';
-$canonicalUrl = config('app.url') . $locale;
+$canonicalUrl = config('app.url');
 $favicon = 'favicon1.png';
 
 $h1 = 'Web&Opt';
@@ -13,9 +12,9 @@ $work2 = __('work2');
 
 ?>
 <!DOCTYPE html>
-<html lang="{{app()->getLocale()}}">
+<html lang="en-US">
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Home | {{ $title_wide }}</title>
     <meta name="description" content="@lang($slogan)">
     <meta name="keywords" content="www, web site, design, development, optimization">
@@ -26,7 +25,7 @@ $work2 = __('work2');
     <meta name="viewport" content="width=1200">
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
-    <link rel="icon" type="image/png" href="{{ $favicon }}" />
+    <link rel="icon" type="image/png" href="{{ $favicon }}">
     <link rel="stylesheet" type="text/css" href="{{ elixir('build/css/app.css', '') }}">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script type="text/javascript" src="{{ elixir('build/js/head.js', '') }}"></script>
@@ -35,9 +34,7 @@ $work2 = __('work2');
 <body>
 <div id="section-home" class="w-section section-header">
     <div class="w-row">
-        <div class="w-col w-col-6">
-            @include('components.lang')
-        </div>
+        <div class="w-col w-col-6"></div>
         <div class="w-col w-col-6 w-clearfix">
             <div class="top-navigation">
 
@@ -79,24 +76,15 @@ $work2 = __('work2');
         <h2>@lang('Contact')</h2>
         <div class="personal-contact">
             <div class="contact-name">
-                @lang('Geo Artemenko | New York')
+                @lang('Geo Artemenko')
             </div>
             <div class="contact-phone">
-                +1 (929) 400-5006
+                +1 (929) 602-0605
             </div>
             <div>
-                <a class="contact-email" href="mailto:geo@web-opt.com">geo@web-opt.com</a>
-            </div>
-        </div>
-        <div class="personal-contact">
-            <div class="contact-name">
-                @lang('Kirill Artemenko | Moscow')
-            </div>
-            <div class="contact-phone">
-                +7 (919) 993-9240
-            </div>
-            <div>
-                <a class="contact-email" href="mailto:kirill@artemenko.ru">kirill@artemenko.ru</a>
+                <a class="contact-email" href="mailto:geo@web-opt.com">
+                    geo@web-opt.com
+                </a>
             </div>
         </div>
     </div>

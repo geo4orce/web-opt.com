@@ -71,7 +71,8 @@ chmod -R 777 bootstrap/cache storage
 * `php artisan route:clear`
 * `php artisan view:clear`
 * `npm install`
-* `npm run dev`
+* `npm run dev` or `npm run watch`
+* `php artisan serve` --> http://localhost:8000/ 
 
 ## Deployment
 
