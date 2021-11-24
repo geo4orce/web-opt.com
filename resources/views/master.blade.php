@@ -16,7 +16,7 @@ $work2 = __('work2');
 <html lang="{{app()->getLocale()}}">
 <head>
     <meta charset="utf-8" />
-    <title>Home | {{ $title_wide }}</title>
+    <title>Home | {{ $title_wide }}.</title>
     <meta name="description" content="@lang($slogan)">
     <meta name="keywords" content="www, web site, design, development, optimization">
     <meta name="author" content="Geo Artemenko">
