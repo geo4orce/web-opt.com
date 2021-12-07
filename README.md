@@ -60,6 +60,33 @@ cd /var/www/stage.web-opt.com && \
 chmod -R 777 bootstrap/cache storage
 ```
 
+### misc
+
+PHP is not starting after droplet reboot (@todo: fix it in the startup list `ls /etc/rc*.d` - S01=start, K01=kill):
+```
+php -v
+update-alternatives --config php # change PHP version
+service php7.2-fpm status
+service php7.2-fpm restart
+systemctl status php*-fpm.service # list all php-fpm installed
+```
+
+Check/restart nginx:
+```
+nginx -v
+nginx -t # check valid configs
+systemctl restart nginx
+systemctl status nginx
+tail -f /var/log/nginx/error.log
+tail -f /var/log/nginx/access.log
+```
+
+Turn off apache autostart, enable nginx (not 100% sure):
+```
+update-rc.d apache2 disable
+systemctl enable nginx
+```
+
 ## Local or stage set up
 
 * `git clone`
