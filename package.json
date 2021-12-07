@@ -2,6 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "mix",
+        "prod": "mix --production",
         "watch": "mix watch"
     },
     "devDependencies": {
