@@ -26,9 +26,9 @@ $work2 = __('work2');
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
-    <link rel="stylesheet" type="text/css" href="{{ elixir('build/css/app.css', '') }}">
+    <link rel="stylesheet" type="text/css" href="/build/css/app.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script type="text/javascript" src="{{ elixir('build/js/head.js', '') }}"></script>
+    <script type="text/javascript" src="/build/js/head.js"></script>
     <script type="text/javascript" src="{{ asset('/js/modernizr.js') }}"></script>
 </head>
 <body>
@@ -90,7 +90,6 @@ $work2 = __('work2');
     </div>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="{{ elixir('build/js/foot.js', '') }}"></script>
-<!--[if lte IE 9]><script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script type="text/javascript" src="/build/js/foot.js"></script>
 </body>
 </html>
