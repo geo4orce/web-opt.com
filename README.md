@@ -90,7 +90,7 @@ systemctl enable nginx
 ## Local or stage set up
 
 * `git clone`
-* `php artisan env` --> should be "local" or "staging"
+* `php artisan env` --> should be "local" or "stage"
 * `composer install`
 * `php artisan clear-compiled`
 * `php artisan cache:clear`
@@ -115,4 +115,3 @@ Then on server run:
 ## Contact
 
 * [geo@web-opt.com](mailto:geo@web-opt.com)
-* [kirill@artemenko.ru](mailto:kirill@artemenko.ru)
