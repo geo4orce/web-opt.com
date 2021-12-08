@@ -62,6 +62,14 @@ chmod -R 777 bootstrap/cache storage
 
 ### misc
 
+When starting a droplet it hangs on boot:
+
+1. Go to the [Recovery Console](https://cloud.digitalocean.com/droplets/9476819/access?i=552704).
+2. Press the `Launch Recovery Console` button.
+3. Click on the console and ?? press "Enter" about two times. Something like that.
+4. It should start booting at this point.
+5. Check the website in a bit.
+
 PHP is not starting after droplet reboot (@todo: fix it in the startup list `ls /etc/rc*.d` - S01=start, K01=kill):
 ```
 php -v
@@ -105,13 +113,28 @@ systemctl enable nginx
 ## Deployment
 
 Before commiting into master run:
-`npm run prod`
+* `composer run test` --> make sure all green
+* `npm run prod` --> this will minify and cache-bust the bundles
+* Then commit and push.
 
-Then on server run:
+Then on **stage** server run:
+* `cd /var/www/stage.web-opt.com` 
+* `git pull`
+* `composer install` 
+
+On **prod**:
+* `cd /var/www/web-opt.com`
+* `git pull`
 * `composer install --optimize-autoloader --no-dev`
 * `php artisan config:cache`
 * `php artisan route:cache`
 * `php artisan queue:restart`
+
+NOTE: consider putting the server into a maintenance mode meanwhile:
+```
+php artisan down
+php artisan up
+```
 
 ## Contact
 
