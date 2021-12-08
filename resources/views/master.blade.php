@@ -9,6 +9,8 @@ $title_legal = 'Web-Opt, LLC';
 $slogan = 'Website Development and Optimization';
 $work1 = __('work1');
 $work2 = __('work2');
+$emailGeo = 'geo@web-opt.com';
+$emailJulia = 'julia@web-opt.com';
 
 ?>
 <!DOCTYPE html>
@@ -26,10 +28,7 @@ $work2 = __('work2');
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
-    <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css', '') }}">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-    <script type="text/javascript" src="{{ mix('build/js/head.js', '') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/modernizr.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
 </head>
 <body>
 <div id="section-home" class="w-section section-header">
@@ -38,11 +37,10 @@ $work2 = __('work2');
         <div class="w-col w-col-6 w-clearfix">
             <div class="top-navigation">
 
-                {{-- works with "#section-xxx", @see public/js/webflow.js:3221 --}}
-                <a href="#home" class="top-navigation-link">@lang('Home')</a>
-                <a href="#work1" class="top-navigation-link">@lang('Work') 1</a>
-                <a href="#work2" class="top-navigation-link">@lang('Work') 2</a>
-                <a href="#contact" class="top-navigation-link">@lang('Contact')</a>
+                <a href="#section-home" class="top-navigation-link">@lang('Home')</a>
+                <a href="#section-work1" class="top-navigation-link">@lang('Work') 1</a>
+                <a href="#section-work2" class="top-navigation-link">@lang('Work') 2</a>
+                <a href="#section-contact" class="top-navigation-link">@lang('Contact')</a>
 
             </div>
         </div>
@@ -55,18 +53,22 @@ $work2 = __('work2');
     </div>
 </div>
 <div class="w-section section-works">
-    <div id="section-work1" class="work weareglow">
-        <div class="weareglow-holder">
-            <h2>Glow</h2>
-            <p class="work-description">{{ $work1 }}</p>
-            <a href="http://weareglow.com/" target="_blank" class="work-link">www.weareglow.com</a>
-        </div>
-    </div>
-    <div id="section-work2" class="work criteo">
+    <div id="section-work1" class="work criteo">
         <div class="weareglow-holder">
             <h2>Criteo</h2>
             <p class="work-description">{{ $work2 }}</p>
-            <a href="https://www.criteo.com/" target="_blank" class="work-link white">www.criteo.com</a>
+            <a href="https://www.criteo.com/" target="_blank" class="work-link white">
+                www.criteo.com
+            </a>
+        </div>
+    </div>
+    <div id="section-work2" class="work weareglow">
+        <div class="weareglow-holder">
+            <h2>Glow</h2>
+            <p class="work-description">{{ $work1 }}</p>
+            <a href="https://weareglow.com/" target="_blank" class="work-link">
+                www.weareglow.com
+            </a>
         </div>
     </div>
 </div>
@@ -76,20 +78,32 @@ $work2 = __('work2');
         <h2>@lang('Contact')</h2>
         <div class="personal-contact">
             <div class="contact-name">
-                @lang('Geo Artemenko')
+                Geo Artemenko
             </div>
             <div class="contact-phone">
                 +1 (929) 602-0605
             </div>
             <div>
-                <a class="contact-email" href="mailto:geo@web-opt.com">
-                    geo@web-opt.com
+                <a class="contact-email" href="mailto:{{ $emailGeo }}">
+                    {{ $emailGeo }}
+                </a>
+            </div>
+        </div>
+        <div class="personal-contact">
+            <div class="contact-name">
+                Julia Oldman
+            </div>
+            <div class="contact-phone">
+                +1 (984) 833-9300
+            </div>
+            <div>
+                <a class="contact-email" href="mailto:{{ $emailJulia }}">
+                    {{ $emailJulia }}
                 </a>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="{{ mix('build/js/foot.js', '') }}"></script>
+<script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>
 </html>

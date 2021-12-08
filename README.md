@@ -89,7 +89,8 @@ systemctl enable nginx
 
 ## Local or stage set up
 
-* `git clone`
+* `node -v` --> should be `v16.13.1`
+* `npm -v` --> should be `8.1.2`
 * `php artisan env` --> should be "local" or "stage"
 * `composer install`
 * `php artisan clear-compiled`
