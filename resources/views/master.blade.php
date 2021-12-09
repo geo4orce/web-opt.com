@@ -31,79 +31,78 @@ $emailJulia = 'julia@web-opt.com';
     <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
 </head>
 <body>
-<div id="section-home" class="w-section section-header">
-    <div class="w-row">
-        <div class="w-col w-col-6"></div>
-        <div class="w-col w-col-6 w-clearfix">
-            <div class="top-navigation">
-
-                <a href="#section-home" class="top-navigation-link">@lang('Home')</a>
-                <a href="#section-work1" class="top-navigation-link">@lang('Work') 1</a>
-                <a href="#section-work2" class="top-navigation-link">@lang('Work') 2</a>
-                <a href="#section-contact" class="top-navigation-link">@lang('Contact')</a>
-
-            </div>
+    <div id="section-home" class="section-header">
+        <div class="top-navigation">
+            <a href="#section-home" class="top-navigation-link">@lang('Home')</a>
+            <a href="#section-work1" class="top-navigation-link">@lang('Work') 1</a>
+            <a href="#section-work2" class="top-navigation-link">@lang('Work') 2</a>
+            <a href="#section-contact" class="top-navigation-link">@lang('Contact')</a>
         </div>
-    </div>
-    <div class="w-container">
         <div class="intro-holder">
-            <h1 class="intro-title">{{ $h1 }}</h1>
-            <div class="intro-description">@lang($slogan)</div>
-        </div>
-    </div>
-</div>
-<div class="w-section section-works">
-    <div id="section-work1" class="work criteo">
-        <div class="weareglow-holder">
-            <h2>Criteo</h2>
-            <p class="work-description">{{ $work2 }}</p>
-            <a href="https://www.criteo.com/" target="_blank" class="work-link white">
-                www.criteo.com
-            </a>
-        </div>
-    </div>
-    <div id="section-work2" class="work weareglow">
-        <div class="weareglow-holder">
-            <h2>Glow</h2>
-            <p class="work-description">{{ $work1 }}</p>
-            <a href="https://weareglow.com/" target="_blank" class="work-link">
-                www.weareglow.com
-            </a>
-        </div>
-    </div>
-</div>
-<div id="section-contact" class="w-section section-footer">
-    <div class="copyrights">&copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All rights reserved').</div>
-    <div class="weareglow-holder">
-        <h2>@lang('Contact')</h2>
-        <div class="personal-contact">
-            <div class="contact-name">
-                Geo Artemenko
+            <h1 class="intro-title">
+                {{ $h1 }}
+            </h1>
+            <div class="intro-description">
+                {{ $slogan }}
             </div>
-            <div class="contact-phone">
-                +1 (929) 602-0605
-            </div>
-            <div>
-                <a class="contact-email" href="mailto:{{ $emailGeo }}">
-                    {{ $emailGeo }}
+        </div>
+    </div>
+    <div class="section-works">
+        <div id="section-work1" class="work criteo">
+            <div class="weareglow-holder">
+                <h2>Criteo</h2>
+                <p class="work-description">{{ $work2 }}</p>
+                <a href="https://www.criteo.com/" target="_blank" class="work-link white">
+                    www.criteo.com
                 </a>
             </div>
         </div>
-        <div class="personal-contact">
-            <div class="contact-name">
-                Julia Oldman
-            </div>
-            <div class="contact-phone">
-                +1 (984) 833-9300
-            </div>
-            <div>
-                <a class="contact-email" href="mailto:{{ $emailJulia }}">
-                    {{ $emailJulia }}
+        <div id="section-work2" class="work weareglow">
+            <div class="weareglow-holder">
+                <h2>Glow</h2>
+                <p class="work-description">{{ $work1 }}</p>
+                <a href="https://weareglow.com/" target="_blank" class="work-link">
+                    www.weareglow.com
                 </a>
             </div>
         </div>
     </div>
-</div>
-<script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
+    <div id="section-contact" class="section-footer">
+        <div class="copyrights">
+            &copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All rights reserved').
+        </div>
+        <div class="weareglow-holder">
+            <h2>
+                Contact
+            </h2>
+            <div class="personal-contact">
+                <div class="contact-name">
+                    Geo Artemenko
+                </div>
+                <div class="contact-phone">
+                    +1 (929) 602-0605
+                </div>
+                <div>
+                    <a class="contact-email" href="mailto:{{ $emailGeo }}">
+                        {{ $emailGeo }}
+                    </a>
+                </div>
+            </div>
+            <div class="personal-contact">
+                <div class="contact-name">
+                    Julia Oldman
+                </div>
+                <div class="contact-phone">
+                    +1 (984) 833-9300
+                </div>
+                <div>
+                    <a class="contact-email" href="mailto:{{ $emailJulia }}">
+                        {{ $emailJulia }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>
 </html>
