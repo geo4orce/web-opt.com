@@ -114,7 +114,8 @@ systemctl enable nginx
 ## Deployment
 
 Before commiting into master run:
-* `composer run test` --> make sure all green
+* `composer run test` --> make sure phpunit is all green
+* `npm run test` --> make sure jest is all green (@todo: not yet implemented)
 * `npm run prod` --> this will minify and cache-bust the bundles
 * Then commit and push.
 

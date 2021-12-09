@@ -7,8 +7,8 @@ $h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
 $slogan = 'Website Development and Optimization';
-$work1 = __('work1');
-$work2 = __('work2');
+$work1 = 'Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.';
+$work2 = 'Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.';
 $emailGeo = 'geo@web-opt.com';
 $emailJulia = 'julia@web-opt.com';
 
