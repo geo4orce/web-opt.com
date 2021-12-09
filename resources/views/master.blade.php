@@ -3,10 +3,9 @@
 $canonicalUrl = config('app.url');
 $favicon = 'favicon1.png';
 
-$h1 = 'Web&Opt';
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
-$slogan = 'Website Development and Optimization';
+$slogan = 'WEBSITE DEVELOPMENT AND OPTIMIZATION';
 $work1 = 'Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.';
 $work2 = 'Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.';
 $emailGeo = 'geo@web-opt.com';
@@ -17,7 +16,9 @@ $emailJulia = 'julia@web-opt.com';
 <html lang="en-US">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Home | {{ $title_wide }}</title>
+    <title>
+        Home | {{ $title_wide }}
+    </title>
     <meta name="description" content="@lang($slogan)">
     <meta name="keywords" content="www, web site, design, development, optimization">
     <meta name="author" content="Geo Artemenko">
@@ -31,24 +32,22 @@ $emailJulia = 'julia@web-opt.com';
     <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
 </head>
 <body>
-    <div id="section-home" class="section-header">
-        <div class="top-navigation">
-            <a href="#section-home" class="top-navigation-link">@lang('Home')</a>
-            <a href="#section-work1" class="top-navigation-link">@lang('Work') 1</a>
-            <a href="#section-work2" class="top-navigation-link">@lang('Work') 2</a>
-            <a href="#section-contact" class="top-navigation-link">@lang('Contact')</a>
-        </div>
-        <div class="intro-holder">
-            <h1 class="intro-title">
-                {{ $h1 }}
-            </h1>
-            <div class="intro-description">
-                {{ $slogan }}
-            </div>
+    <div class="top-navigation">
+        <a href="#home" class="top-navigation__link">@lang('Home')</a>
+        <a href="#work1" class="top-navigation__link">@lang('Work') 1</a>
+        <a href="#work2" class="top-navigation__link">@lang('Work') 2</a>
+        <a href="#contact" class="top-navigation__link">@lang('Contact')</a>
+    </div>
+    <div id="home" class="header">
+        <h1>
+            WEB<span>&</span>OPT
+        </h1>
+        <div class="intro-description">
+            {{ $slogan }}
         </div>
     </div>
-    <div class="section-works">
-        <div id="section-work1" class="work criteo">
+    <div class="works">
+        <div id="work1" class="work criteo">
             <div class="weareglow-holder">
                 <h2>Criteo</h2>
                 <p class="work-description">{{ $work2 }}</p>
@@ -57,7 +56,7 @@ $emailJulia = 'julia@web-opt.com';
                 </a>
             </div>
         </div>
-        <div id="section-work2" class="work weareglow">
+        <div id="work2" class="work weareglow">
             <div class="weareglow-holder">
                 <h2>Glow</h2>
                 <p class="work-description">{{ $work1 }}</p>
@@ -67,7 +66,7 @@ $emailJulia = 'julia@web-opt.com';
             </div>
         </div>
     </div>
-    <div id="section-contact" class="section-footer">
+    <div id="contact" class="footer">
         <div class="copyrights">
             &copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All rights reserved').
         </div>
