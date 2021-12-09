@@ -49,6 +49,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
         ],
+        "serve": "php artisan serve",
         "test": "phpunit"
     },
     "config": {

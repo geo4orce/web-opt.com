@@ -95,6 +95,18 @@ update-rc.d apache2 disable
 systemctl enable nginx
 ```
 
+### local
+
+if issues with env vars or debugbar is not showing up:
+
+```
+# stop the local server
+php artisan clear-compiled
+php artisan cache:clear
+php artisan route:clear
+# start the local server
+```
+
 ## Local or stage set up
 
 * `nvs use` --> [nvs](https://github.com/jasongin/nvs) will read the .node-version file 
@@ -109,7 +121,7 @@ systemctl enable nginx
 * `php artisan view:clear`
 * `npm install`
 * `npm run dev` or `npm run watch`
-* `php artisan serve` --> http://localhost:8000/ 
+* `composer run serve` --> http://localhost:8000/ or 8001 (watch out for reason: Address already in use) 
 
 ## Deployment
 
