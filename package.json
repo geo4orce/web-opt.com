@@ -5,17 +5,13 @@
         "prod": "mix --production",
         "watch": "mix watch"
     },
+    "engines": {
+        "node": ">=v16.13"
+    },
     "devDependencies": {
-        "axios": "^0.18",
-        "bootstrap": "^4.0.0",
-        "cross-env": "^5.1.6",
-        "jquery": "^3.2",
         "laravel-mix": "^6.0.39",
-        "lodash": "^4.17.4",
-        "popper.js": "^1.12",
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.44.0",
-        "sass-loader": "^12.4.0",
-        "vue": "^2.5.7"
+        "sass-loader": "^12.4.0"
     }
 }
