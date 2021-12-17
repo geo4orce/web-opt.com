@@ -1,5 +1,6 @@
 @import './colors';
 @import './mixins';
+@import './shared';
 
 body {
     font-family: Montserrat, sans-serif;
@@ -24,6 +25,12 @@ body {
         }
     }
 
+    &__desktop {
+        @include mobile {
+            display: none;
+        }
+    }
+
     &__link {
         border-radius: 5px;
         border: 1px solid $link-border;
@@ -39,9 +46,40 @@ body {
             background: $white;
             border-color: $accent;
         }
+    }
+}
 
-        @include mobile {
-            display: none;
+.mobile-navigation {
+    background: rgba(0, 0, 0, .7);
+    height: 100vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+    display: flex;
+    justify-content: end;
+
+    &__box {
+        align-content: center;
+        align-items: center;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        height: 230px;
+        justify-content: space-around;
+        padding: 10px 25px;
+        width: 130px;
+
+        // override
+        > .top-navigation__link {
+            background: black;
+            color: white;
+            margin-left: 0;
+            padding: 15px;
+            width: 100%;
         }
     }
 }
