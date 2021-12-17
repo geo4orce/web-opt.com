@@ -150,7 +150,14 @@ On **prod**:
 * `php artisan route:cache`
 * `php artisan queue:restart`
 
-@TODO: create a one liner!
+One liner:
+```
+git pull && \
+composer install --optimize-autoloader --no-dev && \
+php artisan config:cache && \
+php artisan route:cache && \
+php artisan queue:restart
+```
 
 NOTE: consider putting the server into a maintenance mode meanwhile:
 ```
