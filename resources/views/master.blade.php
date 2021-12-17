@@ -33,6 +33,7 @@ $emailJulia = 'julia@web-opt.com';
 </head>
 <body>
     <div class="top-navigation">
+        <div class="top-navigation__burger js-burger"></div>
         <a href="#home" class="top-navigation__link">@lang('Home')</a>
         <a href="#work1" class="top-navigation__link">@lang('Work') 1</a>
         <a href="#work2" class="top-navigation__link">@lang('Work') 2</a>

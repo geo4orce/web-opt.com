@@ -1,1 +1,4 @@
-console.log('js will be here2');
+document.querySelector('.js-burger').addEventListener('click', () => {
+    console.log('burger click');
+});
+

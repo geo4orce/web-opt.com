@@ -7,7 +7,7 @@ $width-mobile: 768px !default;
 }
 
 @mixin desktop {
-    @media ('min-width: $width-mobile') {
+    @media ('min-width: #{$width-mobile}') {
         @content;
     }
 }
