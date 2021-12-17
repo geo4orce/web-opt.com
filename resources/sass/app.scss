@@ -192,6 +192,11 @@
                 display: block;
                 margin-bottom: 20px;
                 padding-left: 35px;
+
+                @include mobile {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
             }
 
             &__phone {
@@ -200,6 +205,11 @@
                 display: block;
                 margin-bottom: 20px;
                 padding-left: 35px;
+
+                @include mobile {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
             }
 
             &__btn {
@@ -237,6 +247,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 100;
 
     &__box {
         background: $silver;
@@ -247,26 +258,6 @@
         flex-direction: column;
         justify-content: center;
         padding: 0 10vw;
-
-        > textarea {
-            height: 100px;
-            border-radius: 5px;
-            font-size: 18px;
-            padding: 5px;
-        }
-
-        // submit
-        > button {
-            background: $white;
-            border-radius: 5px;
-            border: 1px solid $black;
-            font-size: 18px;
-            margin-top: 30px;
-
-            &:hover {
-                border-color: $accent;
-            }
-        }
     }
 
     &__header {
@@ -305,6 +296,36 @@
                 top: -4px;
             }
         }
+    }
+
+    &__email {
+        height: 30px;
+    }
+
+    &__message {
+        height: 100px;
+    }
+
+    &__submit {
+        background: $white;
+        border-radius: 5px;
+        border: 1px solid $black;
+        font-size: 18px;
+        margin-top: 30px;
+
+        &:hover {
+            border-color: $accent;
+        }
+    }
+
+    &__success {
+        background: url('./images/success.svg');
+        background-size: contain;
+        border-radius: 100px;
+        border: 20px solid $success;
+        height: 100px;
+        margin: 30px auto;
+        width: 100px;
     }
 
 }

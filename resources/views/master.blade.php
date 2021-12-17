@@ -122,7 +122,7 @@ $email = 'contact@web-opt.com';
         &copy; 2011-{{ date('Y') }} {{ $title_legal }}. All rights reserved.
     </div>
     <div class="contact-modal js-contact-modal hidden">
-        <div class="contact-modal__box">
+        <form action="/api/contact-us" method="POST" class="contact-modal__box">
             <div class="contact-modal__header">
                 <h3>
                     Contact Us
@@ -132,12 +132,26 @@ $email = 'contact@web-opt.com';
                     <b>&times;</b>
                 </button>
             </div>
-            <input name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">
-                Send
+            <input
+                class="contact-modal__email js-contact-input"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+            <textarea
+                class="contact-modal__message js-contact-input"
+                name="message"
+                placeholder="Your Message"
+                required
+            ></textarea>
+            <button type="submit" class="contact-modal__submit js-contact-input">
+                SEND
             </button>
-        </div>
+            <div class="contact-modal__success js-contact-success hidden"></div>
+            <button class="contact-modal__submit js-contact-close hidden">
+                CLOSE
+            </button>
+        </form>
     </div>
     <script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>
