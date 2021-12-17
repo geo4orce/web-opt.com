@@ -12,7 +12,7 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                color: #B0BEC5;
+                color: gray;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato', serif;
