@@ -1,7 +1,8 @@
 @import './colors';
 
 body {
-    font-family: Montserrat, sans-serif;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 200;
     margin: 0;
     min-width: 320px;
 
@@ -17,7 +18,7 @@ body {
 
 h1 {
     font-size: 10vw;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2vw;
     line-height: 10vw;
     margin: 0;
@@ -31,12 +32,13 @@ h1 {
 
     > span {
         color: $accent;
-        font-weight: 300;
+        font-weight: 200;
     }
 }
 
 h2 {
     font-size: 8vw;
+    font-weight: 600;
     margin: 0;
 
     @include mobile {

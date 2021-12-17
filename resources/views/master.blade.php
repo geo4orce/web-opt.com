@@ -31,6 +31,9 @@ $emailJulia = 'julia@web-opt.com';
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
     <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="top-navigation">
