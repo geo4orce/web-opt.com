@@ -4,7 +4,7 @@
         "dev": "mix",
         "prod": "mix --production",
         "test": "echo 'not yet implemented'; exit 0;",
-        "watch": "mix watch"
+        "watch": "mix watch --hot"
     },
     "engines": {
         "node": ">=v16.13"

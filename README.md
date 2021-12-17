@@ -103,7 +103,9 @@ if issues with env vars or debugbar is not showing up:
 # stop the local server
 php artisan clear-compiled
 php artisan cache:clear
+php artisan config:clear
 php artisan route:clear
+php artisan view:clear
 # start the local server
 ```
 
@@ -112,6 +114,7 @@ php artisan route:clear
 * `nvs use` --> [nvs](https://github.com/jasongin/nvs) will read the .node-version file 
 * `node -v` --> should be `v16.13.1`
 * `npm -v` --> should be `8.1.2`
+* If `php -v` is not 8, then run `composer run php8`
 * `php artisan env` --> should be "local" or "stage"
 * `composer install`
 * `php artisan clear-compiled`
@@ -125,7 +128,7 @@ php artisan route:clear
 
 ## Deployment
 
-Before commiting into master run:
+Before committing into master run:
 * `composer run test` --> make sure phpunit is all green
 * `npm run test` --> make sure jest is all green (@todo: not yet implemented)
 * `npm run prod` --> this will minify and cache-bust the bundles
@@ -138,6 +141,7 @@ Then on **stage** server run:
 
 On **prod**:
 * `cd /var/www/web-opt.com`
+* @todo: consider `php artisan down` before doing this?
 * `git pull`
 * `composer install --optimize-autoloader --no-dev`
 * `php artisan config:cache`

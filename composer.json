@@ -1,7 +1,13 @@
 {
     "name": "web-opt/web-opt",
     "description": "Web Development and Optimization",
-    "keywords": ["www", "web site", "design", "development", "optimization"],
+    "keywords": [
+        "www",
+        "web site",
+        "design",
+        "development",
+        "optimization"
+    ],
     "license": "proprietary",
     "type": "project",
     "require": {
@@ -39,17 +45,13 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
         ],
         "serve": "php artisan serve",
+        "php7": "brew unlink php@8.1 && brew link php@7.4 && php -v",
+        "php8": "brew unlink php@7.4 && brew link php@8.1 && php -v",
         "test": "phpunit"
     },
     "config": {
