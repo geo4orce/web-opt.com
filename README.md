@@ -150,6 +150,8 @@ On **prod**:
 * `php artisan route:cache`
 * `php artisan queue:restart`
 
+@TODO: create a one liner!
+
 NOTE: consider putting the server into a maintenance mode meanwhile:
 ```
 php artisan down
