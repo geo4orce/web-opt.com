@@ -29,9 +29,11 @@ $email = 'contact@web-opt.com';
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
     <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
+
+    {{-- fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="top-navigation">
@@ -137,6 +139,7 @@ $email = 'contact@web-opt.com';
                 name="email"
                 placeholder="Your Email"
                 required
+                type="email"
             >
             <textarea
                 class="contact-modal__message js-contact-input"

@@ -16,7 +16,12 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
+
+    'mailgun' => [
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -56,9 +61,10 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'contact@web-opt.com'),
+        'name' => env('MAIL_FROM_NAME', 'Contact Form'),
     ],
+    'contact' => 'contact@web-opt.com',
 
     /*
     |--------------------------------------------------------------------------

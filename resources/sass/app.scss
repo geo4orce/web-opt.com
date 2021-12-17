@@ -96,7 +96,6 @@
     }
 
     .intro-description {
-        color: $silver;
         font-size: 1.5vw;
         letter-spacing: .75vw;
 
@@ -213,6 +212,7 @@
             }
 
             &__btn {
+                display: none; // @debug
                 background: white url('./images/contact.svg') no-repeat 10%;
                 background-size: contain;
                 border-radius: 5px;
@@ -257,7 +257,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 10vw;
+        padding: 10px 10vw;
     }
 
     &__header {
@@ -282,7 +282,7 @@
             }
 
             > span {
-                font-size: 20px;
+                font-size: 17px;
 
                 @include mobile {
                     display: none;
@@ -290,10 +290,8 @@
             }
 
             > b {
-                font-size: 61px;
-                position: relative;
-                text-indent: 10px;
-                top: -4px;
+                font-size: 50px;
+                text-indent: 5px;
             }
         }
     }
@@ -303,7 +301,7 @@
     }
 
     &__message {
-        height: 100px;
+        height: 200px;
     }
 
     &__submit {
@@ -311,7 +309,9 @@
         border-radius: 5px;
         border: 1px solid $black;
         font-size: 18px;
-        margin-top: 30px;
+        margin: 30px auto 0;
+        padding: 6px;
+        width: 50%;
 
         &:hover {
             border-color: $accent;
