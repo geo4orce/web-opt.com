@@ -4,6 +4,16 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    margin: 0;
+
+    // @debug
+    //@include mobile {
+    //    background: lightpink;
+    //}
+    //@include desktop {
+    //    background: lightgoldenrodyellow;
+    //}
+
 }
 
 .top-navigation {
@@ -33,7 +43,7 @@ body {
 
     &__link {
         border-radius: 5px;
-        border: 1px solid $link-border;
+        border: 1px solid $silver;
         color: $black;
         display: inline-block;
         margin-left: 15px;
@@ -51,36 +61,39 @@ body {
 
 .mobile-navigation {
     background: rgba(0, 0, 0, .7);
-    height: 100vw;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
     position: fixed;
     right: 0;
     top: 0;
     width: 100vw;
     z-index: 100;
-    display: flex;
-    justify-content: end;
 
     &__box {
         align-content: center;
         align-items: center;
         background: white;
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1px solid $black;
         display: flex;
         flex-direction: column;
-        height: 230px;
+        height: 180px;
         justify-content: space-around;
         padding: 10px 25px;
         width: 130px;
+    }
 
-        // override
-        > .top-navigation__link {
-            background: black;
-            color: white;
-            margin-left: 0;
-            padding: 15px;
-            width: 100%;
-        }
+    &__link {
+        background: $black;
+        border-radius: 5px;
+        border: 1px solid $black;
+        color: $white;
+        display: inline-block;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
     }
 }
 
@@ -90,71 +103,106 @@ body {
     flex-direction: column;
     height: 100vh;
     justify-content: center;
-    max-height: 70vw;
+    text-align: center;
+
+    @include desktop {
+        max-height: 70vw;
+    }
 
     h1 {
-        font-size: 130px;
+        font-size: 10vw;
         font-weight: 700;
-        letter-spacing: 31px;
-        line-height: 110px;
+        letter-spacing: 2vw;
+        line-height: 10vw;
         margin: 0;
-        padding-bottom: 10px;
-        text-align: center;
+
+        @include mobile {
+            font-size: 12vw;
+            letter-spacing: 2.5vw;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
 
         > span {
             color: $accent;
+            font-weight: 300;
         }
     }
 
     .intro-description {
-        font-size: 20px;
-        text-align: center;
-        letter-spacing: 8px;
+        color: $silver;
+        font-size: 1.5vw;
+        letter-spacing: .75vw;
+
+        @include mobile {
+            font-size: 3vw;
+            letter-spacing: 1vw;
+            line-height: 5vw;
+        }
+
+        // only break slogan for mobile
+        @include desktop {
+            > br {
+                display: none;
+            }
+        }
     }
 }
 
 .work {
-    position: relative;
-    height: 100vh;
-    max-height: 70vw;
-    font-size: 16px;
-    line-height: 1.7em;
-}
+    display: flex;
+    height: 50vh;
 
-.work.weareglow {
-    background-image: url('./images/weareglow.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+    @include desktop {
+        height: 100vh;
+        max-height: 70vw;
+    }
 
-.work.criteo {
-    background-color: #717171;
-    background-image: url('./images/criteo2.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #fff;
-}
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 250px;
+        padding: 8vw 5vw 5vw;
 
-.weareglow-holder {
-    position: absolute;
-    left: 10%;
-    top: 5%;
-    width: 300px;
-}
+        > p {
+            font-size: 16px;
+            line-height: 22px;
 
-.weareglow-holder.criteo {
-    width: 260px;
-}
+            @include mobile {
+                display: none;
+            }
+        }
+    }
 
-.work-link {
-    color: #000;
-    font-size: 18px;
-}
+    h2 {
+        font-size: 8vw;
+        margin: 0;
 
-.work-link.white {
-    color: #fff;
+        @include mobile {
+            font-size: 50px;
+        }
+    }
+
+    &.weareglow {
+        background-image: url('./images/weareglow.jpg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &.criteo {
+        background-color: #717171;
+        background-image: url('./images/criteo2.jpg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $white;
+    }
+
+    &__spacer {
+        flex: 1;
+    }
 }
 
 .footer {
@@ -178,11 +226,6 @@ body {
 .contact-name {
     margin-bottom: 10px;
     font-size: 18px;
-}
-
-.contact-email {
-    color: #6185a7;
-    font-size: 15px;
 }
 
 .contact-phone {

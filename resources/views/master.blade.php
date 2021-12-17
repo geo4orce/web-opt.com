@@ -5,7 +5,8 @@ $favicon = 'favicon1.png';
 
 $title_wide = 'W E B - O P T';
 $title_legal = 'Web-Opt, LLC';
-$slogan = 'WEBSITE DEVELOPMENT AND OPTIMIZATION';
+$slogan = 'Website Development and Optimization';
+$slogan_br = 'WEBSITE DEVELOPMENT <br> AND OPTIMIZATION';
 $work1 = 'Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.';
 $work2 = 'Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.';
 $emailGeo = 'geo@web-opt.com';
@@ -25,7 +26,7 @@ $emailJulia = 'julia@web-opt.com';
     <meta property="og:title" content="{{ $title_wide }}">
     <meta property="og:description" content="@lang($slogan)">
     <meta name="twitter:card" content="@lang($slogan)">
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
@@ -35,12 +36,31 @@ $emailJulia = 'julia@web-opt.com';
     <div class="top-navigation">
         <div class="top-navigation__burger js-burger"></div>
         <div class="top-navigation__desktop">
-            @include('components.nav')
+            <a href="#home" class="top-navigation__link">
+                @lang('Home')
+            </a>
+            <a href="#work1" class="top-navigation__link">
+                @lang('Work') 1
+            </a>
+            <a href="#work2" class="top-navigation__link">
+                @lang('Work') 2
+            </a>
+            <a href="#contact" class="top-navigation__link">
+                @lang('Contact')
+            </a>
         </div>
     </div>
     <div class="mobile-navigation hidden js-mobile-navigation">
         <div class="mobile-navigation__box">
-            @include('components.nav')
+            <a href="#home" class="mobile-navigation__link">
+                @lang('Home')
+            </a>
+            <a href="#work1" class="mobile-navigation__link">
+                @lang('Work')
+            </a>
+            <a href="#contact" class="mobile-navigation__link">
+                @lang('Contact')
+            </a>
         </div>
     </div>
     <div id="home" class="header">
@@ -48,27 +68,35 @@ $emailJulia = 'julia@web-opt.com';
             WEB<span>&</span>OPT
         </h1>
         <div class="intro-description">
-            {{ $slogan }}
+            {!! $slogan_br !!}
         </div>
     </div>
-    <div class="works">
-        <div id="work1" class="work criteo">
-            <div class="weareglow-holder">
-                <h2>Criteo</h2>
-                <p class="work-description">{{ $work2 }}</p>
-                <a href="https://www.criteo.com/" target="_blank" class="work-link white">
-                    www.criteo.com
-                </a>
-            </div>
+    <div id="work1" class="work criteo">
+        <div class="work__box">
+            <h2>
+                Criteo
+            </h2>
+            <p class="work-description">
+                {{ $work2 }}
+            </p>
+            <div class="work__spacer"></div>
+            <a href="https://www.criteo.com/" target="_blank" class="inversed">
+                www.criteo.com
+            </a>
         </div>
-        <div id="work2" class="work weareglow">
-            <div class="weareglow-holder">
-                <h2>Glow</h2>
-                <p class="work-description">{{ $work1 }}</p>
-                <a href="https://weareglow.com/" target="_blank" class="work-link">
-                    www.weareglow.com
-                </a>
-            </div>
+    </div>
+    <div id="work2" class="work weareglow">
+        <div class="work__box">
+            <h2>
+                Glow
+            </h2>
+            <p class="work-description">
+                {{ $work1 }}
+            </p>
+            <div class="work__spacer"></div>
+            <a href="https://weareglow.com/" target="_blank">
+                www.weareglow.com
+            </a>
         </div>
     </div>
     <div id="contact" class="footer">
@@ -87,7 +115,7 @@ $emailJulia = 'julia@web-opt.com';
                     +1 (929) 602-0605
                 </div>
                 <div>
-                    <a class="contact-email" href="mailto:{{ $emailGeo }}">
+                    <a href="mailto:{{ $emailGeo }}">
                         {{ $emailGeo }}
                     </a>
                 </div>
@@ -100,7 +128,7 @@ $emailJulia = 'julia@web-opt.com';
                     +1 (984) 833-9300
                 </div>
                 <div>
-                    <a class="contact-email" href="mailto:{{ $emailJulia }}">
+                    <a href="mailto:{{ $emailJulia }}">
                         {{ $emailJulia }}
                     </a>
                 </div>

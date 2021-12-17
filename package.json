@@ -1,10 +1,10 @@
 {
     "private": true,
     "scripts": {
-        "dev": "mix",
+        "dev": "mix -- --stats-children",
         "prod": "mix --production",
         "test": "echo 'not yet implemented'; exit 0;",
-        "watch": "mix watch --hot"
+        "watch": "mix watch --hot -- --stats-children"
     },
     "engines": {
         "node": ">=v16.13"
