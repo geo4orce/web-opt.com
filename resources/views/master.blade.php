@@ -20,12 +20,12 @@ $emailJulia = 'julia@web-opt.com';
     <title>
         Home | {{ $title_wide }}
     </title>
-    <meta name="description" content="@lang($slogan)">
+    <meta name="description" content="{{ $slogan }}">
     <meta name="keywords" content="www, web site, design, development, optimization">
     <meta name="author" content="Geo Artemenko">
     <meta property="og:title" content="{{ $title_wide }}">
-    <meta property="og:description" content="@lang($slogan)">
-    <meta name="twitter:card" content="@lang($slogan)">
+    <meta property="og:description" content="{{ $slogan }}">
+    <meta name="twitter:card" content="{{ $slogan }}">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
@@ -37,29 +37,29 @@ $emailJulia = 'julia@web-opt.com';
         <div class="top-navigation__burger js-burger"></div>
         <div class="top-navigation__desktop">
             <a href="#home" class="top-navigation__link">
-                @lang('Home')
+                Home
             </a>
             <a href="#work1" class="top-navigation__link">
-                @lang('Work') 1
+                Work 1
             </a>
             <a href="#work2" class="top-navigation__link">
-                @lang('Work') 2
+                Work 2
             </a>
             <a href="#contact" class="top-navigation__link">
-                @lang('Contact')
+                Contact
             </a>
         </div>
     </div>
     <div class="mobile-navigation hidden js-mobile-navigation">
         <div class="mobile-navigation__box">
             <a href="#home" class="mobile-navigation__link">
-                @lang('Home')
+                Home
             </a>
             <a href="#work1" class="mobile-navigation__link">
-                @lang('Work')
+                Work
             </a>
             <a href="#contact" class="mobile-navigation__link">
-                @lang('Contact')
+                Contact
             </a>
         </div>
     </div>
@@ -79,7 +79,7 @@ $emailJulia = 'julia@web-opt.com';
             <p class="work-description">
                 {{ $work2 }}
             </p>
-            <div class="work__spacer"></div>
+            <div class="spacer"></div>
             <a href="https://www.criteo.com/" target="_blank" class="inversed">
                 www.criteo.com
             </a>
@@ -93,17 +93,14 @@ $emailJulia = 'julia@web-opt.com';
             <p class="work-description">
                 {{ $work1 }}
             </p>
-            <div class="work__spacer"></div>
+            <div class="spacer"></div>
             <a href="https://weareglow.com/" target="_blank">
                 www.weareglow.com
             </a>
         </div>
     </div>
     <div id="contact" class="footer">
-        <div class="copyrights">
-            &copy; 2011-{{ date('Y') }} {{ $title_legal }}. @lang('All rights reserved').
-        </div>
-        <div class="weareglow-holder">
+        <div class="footer__box">
             <h2>
                 Contact
             </h2>
@@ -114,11 +111,9 @@ $emailJulia = 'julia@web-opt.com';
                 <div class="contact-phone">
                     +1 (929) 602-0605
                 </div>
-                <div>
-                    <a href="mailto:{{ $emailGeo }}">
-                        {{ $emailGeo }}
-                    </a>
-                </div>
+                <a href="mailto:{{ $emailGeo }}">
+                    {{ $emailGeo }}
+                </a>
             </div>
             <div class="personal-contact">
                 <div class="contact-name">
@@ -127,13 +122,14 @@ $emailJulia = 'julia@web-opt.com';
                 <div class="contact-phone">
                     +1 (984) 833-9300
                 </div>
-                <div>
-                    <a href="mailto:{{ $emailJulia }}">
-                        {{ $emailJulia }}
-                    </a>
-                </div>
+                <a href="mailto:{{ $emailJulia }}">
+                    {{ $emailJulia }}
+                </a>
             </div>
         </div>
+    </div>
+    <div class="copyrights">
+        &copy; 2011-{{ date('Y') }} {{ $title_legal }}. All rights reserved.
     </div>
     <script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>

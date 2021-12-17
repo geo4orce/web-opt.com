@@ -1,5 +1,49 @@
 @import './colors';
 
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    min-width: 320px;
+
+    // @debug
+    //@include mobile {
+    //    background: lightpink;
+    //}
+    //@include desktop {
+    //    background: lightgoldenrodyellow;
+    //}
+
+}
+
+h1 {
+    font-size: 10vw;
+    font-weight: 700;
+    letter-spacing: 2vw;
+    line-height: 10vw;
+    margin: 0;
+
+    @include mobile {
+        font-size: 12vw;
+        letter-spacing: 2.5vw;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+
+    > span {
+        color: $accent;
+        font-weight: 300;
+    }
+}
+
+h2 {
+    font-size: 8vw;
+    margin: 0;
+
+    @include mobile {
+        font-size: 50px;
+    }
+}
+
 .hidden {
     display: none !important;
 }
@@ -16,4 +60,8 @@ a {
     &:hover {
         text-decoration-color: $accent;
     }
+}
+
+.spacer {
+    flex: 1;
 }
