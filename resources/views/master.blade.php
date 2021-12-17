@@ -9,11 +9,9 @@ $slogan = 'Website Development and Optimization';
 $slogan_br = 'WEBSITE DEVELOPMENT <br> AND OPTIMIZATION';
 $work1 = 'Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.';
 $work2 = 'Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.';
-$emailGeo = 'geo@web-opt.com';
-$emailJulia = 'julia@web-opt.com';
+$email = 'contact@web-opt.com';
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -107,27 +105,16 @@ $emailJulia = 'julia@web-opt.com';
             <h2>
                 Contact
             </h2>
-            <div class="personal-contact">
-                <div class="contact-name">
-                    Geo Artemenko
-                </div>
-                <div class="contact-phone">
-                    +1 (929) 602-0605
-                </div>
-                <a href="mailto:{{ $emailGeo }}">
-                    {{ $emailGeo }}
+            <div class="contact">
+                <a href="mailto:{{ $email }}" class="contact__email">
+                    {{ $email }}
                 </a>
-            </div>
-            <div class="personal-contact">
-                <div class="contact-name">
-                    Julia Oldman
-                </div>
-                <div class="contact-phone">
+                <div class="contact__phone">
                     +1 (984) 833-9300
                 </div>
-                <a href="mailto:{{ $emailJulia }}">
-                    {{ $emailJulia }}
-                </a>
+                <button class="contact__btn js-contact-btn">
+                    Contact
+                </button>
             </div>
         </div>
     </div>
