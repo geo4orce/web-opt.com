@@ -246,7 +246,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 60px;
+        padding: 0 10vw;
 
         > textarea {
             height: 100px;
@@ -274,14 +274,29 @@
         justify-content: space-between;
         margin-bottom: 30px;
 
+        > h3 {
+            white-space: nowrap;
+        }
+
         > button {
             align-items: center;
             background: transparent;
             border: none;
             display: flex;
-            font-size: 20px;
             font-weight: 200;
             line-height: 40px;
+
+            &:hover {
+                color: $accent;
+            }
+
+            > span {
+                font-size: 20px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
 
             > b {
                 font-size: 61px;

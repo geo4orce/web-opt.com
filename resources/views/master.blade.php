@@ -128,7 +128,8 @@ $email = 'contact@web-opt.com';
                     Contact Us
                 </h3>
                 <button class="js-contact-close">
-                    CLOSE <b>&times;</b>
+                    <span>CLOSE</span>
+                    <b>&times;</b>
                 </button>
             </div>
             <input name="email" placeholder="Your Email" required>
