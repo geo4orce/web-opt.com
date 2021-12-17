@@ -121,6 +121,23 @@ $email = 'contact@web-opt.com';
     <div class="copyrights">
         &copy; 2011-{{ date('Y') }} {{ $title_legal }}. All rights reserved.
     </div>
+    <div class="contact-modal js-contact-modal hidden">
+        <div class="contact-modal__box">
+            <div class="contact-modal__header">
+                <h3>
+                    Contact Us
+                </h3>
+                <button class="js-contact-close">
+                    CLOSE <b>&times;</b>
+                </button>
+            </div>
+            <input name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">
+                Send
+            </button>
+        </div>
+    </div>
     <script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>
 </html>
