@@ -133,6 +133,8 @@ Before committing into master run:
 * `npm run test` --> make sure jest is all green (@todo: not yet implemented)
 * `npm run prod` --> this will minify and cache-bust the bundles
 * Then commit and push.
+* `ssh geo@web-opt.com`
+* `sudo -su www-data`
 
 Then on **stage** server run:
 * `cd /var/www/stage.web-opt.com` 
