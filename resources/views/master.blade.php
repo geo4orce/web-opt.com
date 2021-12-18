@@ -28,11 +28,8 @@ $email = 'contact@web-opt.com';
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
-    <link rel="stylesheet" media="screen" type="text/css" href="{{ mix('build/css/app.css') }}">
-
-    {{-- fonts --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" media="screen" type="text/css" href="{{ mix('build/css/app.css') }}">
 </head>
 <body>
     <div class="top-navigation">
