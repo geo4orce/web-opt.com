@@ -159,8 +159,14 @@
 }
 
 .footer {
-    background: #ccc url('./images/cards.jpg') no-repeat center 180px;
+    background: #ccc url('./images/cards.jpg') no-repeat;
+    background-position-x: 100px;
     background-size: cover;
+
+    @include mobile {
+        background-position-x: -70px;
+        background-position-y: 120px;
+    }
 
     &__box {
         display: flex;
