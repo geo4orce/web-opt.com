@@ -28,12 +28,11 @@ $email = 'contact@web-opt.com';
     <meta name="robots" content="{{ config('view.robots') }}">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="icon" type="image/png" href="{{ $favicon }}">
-    <link rel="stylesheet" type="text/css" href="{{ mix('build/css/app.css') }}">
+    <link rel="stylesheet" media="screen" type="text/css" href="{{ mix('build/css/app.css') }}">
 
     {{-- fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="top-navigation">
@@ -156,6 +155,6 @@ $email = 'contact@web-opt.com';
             </button>
         </form>
     </div>
-    <script type="text/javascript" src="{{ mix('build/js/app.js') }}" async defer></script>
+    <script src="{{ mix('build/js/app.js') }}" async defer></script>
 </body>
 </html>
