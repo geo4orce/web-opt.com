@@ -49,6 +49,14 @@ cd /var/www/web-opt.com && \
 chmod -R 777 bootstrap/cache storage
 ```
 
+NOTE: redis maybe not started after reboot!!
+```
+sudo systemctl status redis
+sudo systemctl status redis.service
+sudo vi /etc/redis/redis.conf
+# enable or start
+```
+
 ### stage
 
 ```
@@ -150,7 +158,7 @@ On **prod**:
 * `php artisan route:cache`
 * `php artisan queue:restart`
 
-One liner:
+One-liner:
 ```
 git pull && \
 composer install --optimize-autoloader --no-dev && \
