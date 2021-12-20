@@ -111,7 +111,7 @@ $email = 'contact@web-opt.com';
                     +1 (984) 833-9300
                 </div>
                 <button class="contact__btn js-contact-btn">
-                    Contact
+                    Send Message
                 </button>
             </div>
         </div>
@@ -126,7 +126,6 @@ $email = 'contact@web-opt.com';
                     Contact Us
                 </h3>
                 <button class="js-contact-close">
-                    <span>CLOSE</span>
                     <b>&times;</b>
                 </button>
             </div>

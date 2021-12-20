@@ -203,13 +203,12 @@
             }
 
             &__btn {
-                background: white url('./images/contact.svg') no-repeat 10%;
-                background-size: contain;
+                background: white;
                 border-radius: 5px;
                 border: 1px solid $black;
                 font-size: 18px;
                 font-weight: 200;
-                padding: 10px 20px 10px 69px;
+                padding: 10px 20px;
 
                 &:hover {
                     border-color: $accent;
@@ -240,17 +239,17 @@
     z-index: 100;
 
     &__box {
-        background: $silver;
+        background: #ddd;
         border: 5px solid $black;
-        height: 70vh;
         width: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 10px 10vw;
+        padding: 30px;
     }
 
     &__header {
+        align-items: center;
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
@@ -260,28 +259,14 @@
         }
 
         > button {
-            align-items: center;
             background: transparent;
             border: none;
-            display: flex;
+            font-size: 70px;
             font-weight: 200;
-            line-height: 40px;
+            line-height: 50px;
 
             &:hover {
                 color: $accent;
-            }
-
-            > span {
-                font-size: 17px;
-
-                @include mobile {
-                    display: none;
-                }
-            }
-
-            > b {
-                font-size: 50px;
-                text-indent: 5px;
             }
         }
     }
