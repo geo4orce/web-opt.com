@@ -29,7 +29,7 @@ contact.addEventListener('click', () => {
 // contact modal close
 close.forEach(i => {
     i.addEventListener('click', (e) => {
-        console.debug('contact modal reset and close');
+        console.debug('contact modal reset and close', e.target);
         e.preventDefault();
         modal.classList.add('hidden');
         form.reset();

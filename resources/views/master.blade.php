@@ -110,7 +110,7 @@ $email = 'contact@web-opt.com';
                 <div class="contact__phone">
                     +1 (984) 833-9300
                 </div>
-                <button class="contact__btn js-contact-btn">
+                <button type="button" class="contact__btn js-contact-btn">
                     Send Message
                 </button>
             </div>
@@ -125,7 +125,7 @@ $email = 'contact@web-opt.com';
                 <h3>
                     Contact Us
                 </h3>
-                <button class="js-contact-close">
+                <button type="button" class="js-contact-close">
                     <b>&times;</b>
                 </button>
             </div>
@@ -134,7 +134,6 @@ $email = 'contact@web-opt.com';
                 name="email"
                 placeholder="Your Email"
                 required
-                type="email"
             >
             <textarea
                 class="contact-modal__message js-contact-input"
@@ -146,7 +145,7 @@ $email = 'contact@web-opt.com';
                 SEND
             </button>
             <div class="contact-modal__success js-contact-success hidden"></div>
-            <button class="contact-modal__submit js-contact-close hidden">
+            <button type="button" class="contact-modal__submit js-contact-close hidden">
                 CLOSE
             </button>
         </form>
