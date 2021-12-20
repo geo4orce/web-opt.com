@@ -279,7 +279,6 @@
 
     &__message {
         border: 1px solid $black;
-        height: 200px;
     }
 
     &__submit {
@@ -299,11 +298,9 @@
     &__success {
         background: url('./images/success.svg');
         background-size: contain;
-        border-radius: 100px;
-        border: 20px solid $success;
-        height: 100px;
-        margin: 30px auto;
-        width: 100px;
+        height: 50px;
+        margin: auto;
+        width: 50px;
     }
 
 }
