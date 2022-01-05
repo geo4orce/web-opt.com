@@ -108,7 +108,7 @@ $email = 'contact@web-opt.com';
                     {{ $email }}
                 </a>
                 <div class="contact__phone">
-                    +1 (984) 833-9300
+                    +1 (929) 6020605
                 </div>
                 <button type="button" class="contact__btn js-contact-btn">
                     Send Message
