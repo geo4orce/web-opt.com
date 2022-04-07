@@ -10,6 +10,19 @@
     ],
     "license": "proprietary",
     "type": "project",
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ],
+        "php7": "brew unlink php@8.1 && brew link php@7.4 && php -v",
+        "php8": "brew unlink php@7.4 && brew link php@8.1 && php -v",
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpmd": "phpmd codesize,controversial",
+        "serve": "php artisan serve",
+        "test": "phpunit"
+    },
     "require": {
         "php": "^8.1",
         "facade/ignition": "^2.3.6",
@@ -25,7 +38,9 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
         "barryvdh/laravel-ide-helper": "^2.6",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "phpmd/phpmd": "^2.11",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
         "psr-4": {
@@ -44,16 +59,6 @@
             "dont-discover": [
             ]
         }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
-        ],
-        "serve": "php artisan serve",
-        "php7": "brew unlink php@8.1 && brew link php@7.4 && php -v",
-        "php8": "brew unlink php@7.4 && brew link php@8.1 && php -v",
-        "test": "phpunit"
     },
     "config": {
         "preferred-install": "dist",
