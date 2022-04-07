@@ -16,3 +16,4 @@ yarn-error.log
 /.phpstorm.meta.php
 /raw
 *.cache
+.DS_Store
