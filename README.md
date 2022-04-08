@@ -38,6 +38,8 @@ stage from develop branch:
 
 ## Troubleshooting
 
+If you see "broken pipe" while doing `git pull` - just do it again. Broken pipe is a magical bs.
+
 If ever issues, try doing this **as root** (may take a bit):
 
 ### prod
