@@ -8,11 +8,11 @@ Password ssh is disabled. Use ssh keys to connect to the server:
 
 `ssh -i ~/.ssh/id_rsa geo@web-opt.com`
 
-Once inside the server, switch to **www-data** user (no password needed) to edit the web files:
+Once inside the server, make sure that your user (geo) is in the **www-data** group to edit the web files:
 
-`sudo -su www-data`
+`groups geo`
 
-and go to prod folder:
+and go to the prod folder:
 
 `cd /var/www/web-opt.com`
 
@@ -20,11 +20,13 @@ or stage:
 
 `cd /var/www/stage.web-opt.com`
 
+If ever issues with permissions - ensure that group (www-data) has access.
+
 If ever need root actions (password required), do:
 
 `sudo su -`
 
-## Server Commands (as www-data user)
+## Server Commands
 
 Pull from BitBucket repo, prod from master branch:
 
@@ -42,28 +44,33 @@ If ever issues, try doing this **as root** (may take a bit):
 
 ```
 chown -R www-data:www-data /var/www/web-opt.com && \
-chmod 2755 /var/www/web-opt.com && \
-find /var/www/web-opt.com -type d -exec chmod 2755 {} \; && \
-find /var/www/web-opt.com -type f -exec chmod 0644 {} \; && \
+chmod 2775 /var/www/web-opt.com && \
+find /var/www/web-opt.com -type d -exec chmod 2775 {} \; && \
+find /var/www/web-opt.com -type f -exec chmod 0664 {} \; && \
 cd /var/www/web-opt.com && \
 chmod -R 777 bootstrap/cache storage
 ```
 
-NOTE: redis maybe not started after reboot!!
+NOTE: redis and ssh-agent maybe not started after reboot!!
 ```
 sudo systemctl status redis
 sudo systemctl status redis.service
 sudo vi /etc/redis/redis.conf
 # enable or start
+
+# start ssh agent
+eval `ssh-agent -s`
+ssh-add ~/.ssh/bitbucket_rsa
+ssh-add -l
 ```
 
 ### stage
 
 ```
 chown -R www-data:www-data /var/www/stage.web-opt.com && \
-chmod 2755 /var/www/stage.web-opt.com && \
-find /var/www/stage.web-opt.com -type d -exec chmod 2755 {} \; && \
-find /var/www/stage.web-opt.com -type f -exec chmod 0644 {} \; && \
+chmod 2775 /var/www/stage.web-opt.com && \
+find /var/www/stage.web-opt.com -type d -exec chmod 2775 {} \; && \
+find /var/www/stage.web-opt.com -type f -exec chmod 0664 {} \; && \
 cd /var/www/stage.web-opt.com && \
 chmod -R 777 bootstrap/cache storage
 ```
