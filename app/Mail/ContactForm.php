@@ -10,7 +10,6 @@ class ContactForm extends Mailable
 {
     use SerializesModels;
 
-    /** @var array */
     private array $data;
 
     /**
@@ -37,7 +36,6 @@ class ContactForm extends Mailable
         return $this->view('mail.contact-us')
             ->subject("Request from: '$fromEmail'")
             ->with('from', $fromEmail)
-            ->with('msg', $msg)
-        ;
+            ->with('msg', $msg);
     }
 }

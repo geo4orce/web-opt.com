@@ -21,8 +21,5 @@ class ContactFormTest extends TestCase
         $mailable->assertSeeInHtml('Email from');
         $mailable->assertSeeInHtml($email);
         $mailable->assertSeeInHtml($msg);
-
-        // $mailable->assertSeeInText($user->email);
-        // $mailable->assertSeeInText('Invoice Paid');
     }
 }
