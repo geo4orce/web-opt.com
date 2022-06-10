@@ -33,8 +33,11 @@ class ContactForm extends Mailable
         $fromEmail = Arr::get($this->data, 'email');
         $msg = Arr::get($this->data, 'message');
 
+        // fake name
+        $name = Arr::get($this->data, 'name');
+
         return $this->view('mail.contact-us')
-            ->subject("Request from: '$fromEmail'")
+            ->subject("Request from: '$fromEmail' ($name)")
             ->with('from', $fromEmail)
             ->with('msg', $msg);
     }
