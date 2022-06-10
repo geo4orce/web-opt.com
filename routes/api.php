@@ -9,7 +9,7 @@ Route::post('contact-us', function (Request $request) {
     $from = $request->get('email');
     $msg = $request->get('message');
 
-    info('incoming contact-us', $data);
+    info('incoming2 contact-us', $data);
 
     Mail::to(config('mail.contact'))
         ->send(new ContactForm($data));
