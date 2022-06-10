@@ -130,6 +130,11 @@ $email = 'contact@web-opt.com';
                 </button>
             </div>
             <input
+                class="contact-modal__name"
+                name="name"
+                placeholder="Your Name"
+            >
+            <input
                 class="contact-modal__email js-contact-input"
                 name="email"
                 placeholder="Your Email"
