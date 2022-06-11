@@ -38,6 +38,15 @@ stage from develop branch:
 
 ## Troubleshooting
 
+when logged in into web-opt.com do this:
+
+```
+eval `ssh-agent`
+ssh-add ~/.ssh/dig_rsa_2022
+```
+
+That should be enough for pull and push.
+
 If you get "Permission denied (publickey)" - run `ssh-add ~/.ssh/bitbucket_rsa`.
 
 If you get "Could not open a connection to your authentication agent" - run:

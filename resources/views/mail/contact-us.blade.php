@@ -1,10 +1,8 @@
 <div style="margin: 30px;">
     <h2>
-        Email from the web-opt.com contact form:
+        Contact from web-opt.com:
     </h2>
-    <div>
+    <p>
         {{ $msg }}
-    </div>
-    <br><br>
-    From: {{ $from }}
+    </p>
 </div>
