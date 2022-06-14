@@ -13,7 +13,9 @@ Route::post('contact-us', function (Request $request) {
 
     info('incoming contact-us' . $isBot, $data);
 
-    if (!$isBot) {
+    $willSend = !$isBot && $from && $msg; // must be not empty
+
+    if ($willSend) {
         Mail::to(config('mail.contact'))
             ->send(new ContactForm($data));
     }
