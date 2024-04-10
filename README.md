@@ -6,7 +6,11 @@ This is the web-opt.com repo. Please be polite and respectful to the elderly.
 
 Password ssh is disabled. Use ssh keys to connect to the server:
 
-`ssh -i ~/.ssh/id_rsa geo@web-opt.com`
+`ssh geo@web-opt.com`
+
+or
+
+`ssh -i ~/.ssh/dig_rsa geo@web-opt.com`
 
 Once inside the server, make sure that your user (geo) is in the **www-data** group to edit the web files:
 
