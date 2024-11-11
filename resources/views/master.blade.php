@@ -63,7 +63,7 @@ $email = 'contact@web-opt.com';
     </div>
     <div id="home" class="header">
         <h1>
-            WEB<span>&</span>OPT
+            WEB<span>&bull;</span>OPT
         </h1>
         <div class="intro-description">
             {!! $slogan_br !!}
