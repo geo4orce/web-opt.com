@@ -1,12 +1,11 @@
 <?php
 
 $canonicalUrl = config('app.url');
-$favicon = 'favicon1.png';
+$favicon = 'favicon2.png';
 
-$title_wide = 'W E B - O P T';
+$title_wide = 'Web-Opt';
 $title_legal = 'Web-Opt, LLC';
-$slogan = 'Website Development and Optimization';
-$slogan_br = 'WEBSITE DEVELOPMENT <br> AND OPTIMIZATION';
+$slogan = $slogan_br = 'Software Solutions';
 $work1 = 'Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.';
 $work2 = 'Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.';
 $email = 'contact@web-opt.com';
@@ -19,7 +18,7 @@ $email = 'contact@web-opt.com';
         Home | {{ $title_wide }}
     </title>
     <meta name="description" content="{{ $slogan }}">
-    <meta name="keywords" content="www, web site, design, development, optimization">
+    <meta name="keywords" content="web-opt, software solutions, geo artemenko, www, web site, design, development, optimization, SEO">
     <meta name="author" content="Geo Artemenko">
     <meta property="og:title" content="{{ $title_wide }}">
     <meta property="og:description" content="{{ $slogan }}">
@@ -108,7 +107,7 @@ $email = 'contact@web-opt.com';
                     {{ $email }}
                 </a>
                 <div class="contact__phone">
-                    +1 (956) 299-5522
+                    +1 (929) 400-3210
                 </div>
                 <button type="button" class="contact__btn js-contact-btn">
                     Send Message
