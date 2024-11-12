@@ -167,6 +167,7 @@ php artisan view:clear
 ## Deployment
 
 Before committing into master run:
+
 * `composer run test` --> make sure phpunit is all green
 * `npm run test` --> make sure jest is all green (@todo: not yet implemented)
 * `npm run prod` --> this will minify and cache-bust the bundles
@@ -175,11 +176,13 @@ Before committing into master run:
 * `sudo -su www-data`
 
 Then on **stage** server run:
+
 * `cd /var/www/stage.web-opt.com` 
 * `git pull`
 * `composer install` 
 
 On **prod**:
+
 * `cd /var/www/web-opt.com`
 * @todo: consider `php artisan down` before doing this?
 * `git pull`
