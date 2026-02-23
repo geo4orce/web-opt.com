@@ -2,15 +2,21 @@
 description: Deploy Web-Opt.com to production (commit, push, build on server)
 ---
 
-1. Check for uncommitted changes. If there are any, stage all and commit with a descriptive message.
+Full pipeline with fail-fast — abort and report on any failure.
 
-2. Push to Bitbucket: `git push origin main`
+// turbo
+1. Tests: `npm test`
 
-3. SSH to server and deploy:
-```
-ssh geo@web-opt.com "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd /var/www/web-opt.com && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm install && npm run prod"
-```
+// turbo
+2. Build: `npm run prod`
 
-4. Reload Nginx: `ssh geo@web-opt.com "sudo nginx -t && sudo systemctl reload nginx"`
+3. If there are uncommitted changes, stage all and commit with a descriptive message. If clean, skip to step 4.
 
-5. Verify the site is up: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://www.web-opt.com/"`
+4. Push: `git push origin main`
+
+5. SSH deploy: `ssh geo@web-opt.com "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd /var/www/web-opt.com && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm install && npm run prod"`
+
+6. Reload Nginx: `ssh geo@web-opt.com "sudo nginx -t && sudo systemctl reload nginx"`
+
+// turbo
+7. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://www.web-opt.com/"`
