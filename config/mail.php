@@ -61,10 +61,10 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'contact@web-opt.com'),
-        'name' => env('MAIL_FROM_NAME', 'Contact Form'),
+        'address' => env('MAIL_USER', 'geo@web-opt.com'),
+        'name' => env('APP_NAME', 'Web-Opt'),
     ],
-    'contact' => env('MAIL_CONTACT', 'geo@web-opt.com'),
+    'contact' => env('MAIL_USER', 'geo@web-opt.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USER'),
 
     'password' => env('MAIL_PASSWORD'),
 
