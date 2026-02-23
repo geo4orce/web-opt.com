@@ -1,19 +1,42 @@
-# Web-Opt.com - Development & Deployment Information
+# Web-Opt.com — AGENTS.md
 
-## Repository
-- **Code**: Bitbucket (origin) - git@bitbucket.org:Geo4orce/web-opt.com.git
-- **Domain**: https://www.web-opt.com/
-- **Tech Stack**: Laravel 8 + PHP 8.3 + Laravel Mix (Webpack) + SCSS
+This is the master infrastructure reference for all 3 projects hosted on the same server.
 
-## Server Access
-- **Server**: web-opt.com (SSH: geo@web-opt.com)
+## Shared Infrastructure
+
+- **Server**: DigitalOcean droplet, Ubuntu 24.04 LTS, 1GB RAM, NYC3
 - **IP**: 138.197.10.167
-- **SSH Key**: bitbucket_ed25519 (geo@web-opt server)
-- **Node.js**: v24 LTS (via NVM)
-- **PHP**: 8.3-FPM
-- **Web Server**: Nginx + PHP-FPM
+- **SSH**: `ssh geo@web-opt.com`
+- **Node.js**: v24 LTS via NVM
+- **Web Server**: Nginx (auto-starts on reboot)
+- **SSL**: Let's Encrypt via Certbot (auto-renew)
+- **DNS**: DigitalOcean nameservers
+- **Backups**: Weekly, Thu 4am UTC
 
-## Deployment Commands
+### Hosted Sites
+
+| Site | Repo | Branch | Tech | Server Path |
+|------|------|--------|------|-------------|
+| web-opt.com | `git@bitbucket.org:Geo4orce/web-opt.com.git` | `master` | Laravel 8 + PHP 8.3 + Mix | `/var/www/web-opt.com` |
+| gdice.cc | `git@bitbucket.org:Geo4orce/gdice.git` | `main` | Vue 3 + Vite | `/var/www/gdice` |
+| ezspell.com | `git@bitbucket.org:Geo4orce/ezspell.git` | `main` | Svelte + Webpack | `/var/www/ezspell` |
+
+### SSH Keys (on server)
+
+| Key | Purpose |
+|-----|---------|
+| `bitbucket_ed25519` | web-opt.com repo access |
+| `bitbucket4_ed25519` | ezspell repo access |
+| `id_ed25519` | gdice repo access (geoar@GEO_PC) |
+
+---
+
+## Web-Opt.com — Project Details
+
+- **Domain**: https://www.web-opt.com/
+- **Tech Stack**: Laravel 8 + PHP 8.3-FPM + Laravel Mix (Webpack) + SCSS
+
+### Deploy
 ```bash
 ssh geo@web-opt.com
 cd /var/www/web-opt.com
@@ -26,7 +49,7 @@ npm install && npm run prod
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-## Local Development
+### Local Dev
 ```bash
 npm install
 composer install
@@ -34,7 +57,7 @@ php artisan serve
 npm run watch
 ```
 
-## Conventions
+### Conventions
 - **.env values**: Always use double quotes. For booleans use `"1"` (true) or `""` (false).
   ```
   APP_ENV="production"
@@ -43,7 +66,7 @@ npm run watch
   DB_CONNECTION="sqlite"
   ```
 
-## Notes
+### Notes
 - Simple brochure site (1 page + contact form email endpoint)
 - No database needed — use `DB_CONNECTION="sqlite"` or remove DB config
 - Contact form: POST /api/contact-us → sends email via SMTP
