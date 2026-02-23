@@ -149,9 +149,9 @@ php artisan view:clear
 
 ## Local or stage set up
 
-* `nvs use` --> [nvs](https://github.com/jasongin/nvs) will read the .node-version file 
-* `node -v` --> should be `v16.13.1`
-* `npm -v` --> should be `8.1.2`
+* `nvm use` --> [nvm](https://github.com/nvm-sh/nvm) will read the .nvmrc file
+* `node -v` --> should be `v24.x`
+* `npm -v` --> should be `10.x`
 * If `php -v` is not 8, then run `composer run php8`
 * `php artisan env` --> should be "local" or "stage"
 * `composer install`

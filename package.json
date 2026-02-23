@@ -1,13 +1,14 @@
 {
     "private": true,
     "scripts": {
+        "_info": "echo \"Node: $(node -v)\"; echo \"Npm: $(npm -v)\"; echo \"PHP: $(php -v | head -1)\"; echo \"Mix: $(npx mix --version)\"",
         "dev": "mix -- --stats-children",
         "prod": "mix --production",
         "test": "echo 'not yet implemented'; exit 0;",
         "watch": "mix watch --hot -- --stats-children"
     },
     "engines": {
-        "node": ">=v16.13"
+        "node": ">=24"
     },
     "devDependencies": {
         "laravel-mix": "^6.0.39",

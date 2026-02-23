@@ -9,7 +9,7 @@
 - **Server**: web-opt.com (SSH: geo@web-opt.com)
 - **IP**: 138.197.10.167
 - **SSH Key**: bitbucket_ed25519 (geo@web-opt server)
-- **Node.js**: v22 LTS (via NVM)
+- **Node.js**: v24 LTS (via NVM)
 - **PHP**: 8.3-FPM
 - **Web Server**: Nginx + PHP-FPM
 
