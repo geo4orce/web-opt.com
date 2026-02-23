@@ -33,7 +33,7 @@ This is the master infrastructure reference for all 3 projects hosted on the sam
 
 ## Web-Opt.com — Project Details
 
-- **Domain**: https://www.web-opt.com/
+- **Domain**: https://web-opt.com/
 - **Tech Stack**: Laravel 8 + PHP 8.3-FPM + Laravel Mix (Webpack) + SCSS
 
 ### Deploy

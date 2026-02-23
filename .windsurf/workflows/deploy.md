@@ -19,4 +19,4 @@ Full pipeline with fail-fast — abort and report on any failure.
 6. Reload Nginx: `ssh geo@web-opt.com "sudo nginx -t && sudo systemctl reload nginx"`
 
 // turbo
-7. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://www.web-opt.com/"`
+7. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://web-opt.com/"`

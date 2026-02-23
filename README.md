@@ -1,6 +1,6 @@
 # Web-Opt.com
 
-Company website — [web-opt.com](https://www.web-opt.com/)
+Company website — [web-opt.com](https://web-opt.com/)
 
 Laravel 8 + PHP 8.3 + Laravel Mix + SCSS
 
