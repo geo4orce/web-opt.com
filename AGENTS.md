@@ -17,7 +17,7 @@
 ```bash
 ssh geo@web-opt.com
 cd /var/www/web-opt.com
-git pull origin main
+git pull origin master
 composer install --no-dev --optimize-autoloader
 php artisan config:cache
 php artisan route:cache
