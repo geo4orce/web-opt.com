@@ -17,7 +17,7 @@ This is the master infrastructure reference for all 3 projects hosted on the sam
 
 | Site | Repo | Branch | Tech | Server Path |
 |------|------|--------|------|-------------|
-| web-opt.com | `git@bitbucket.org:Geo4orce/web-opt.com.git` | `master` | Laravel 8 + PHP 8.3 + Mix | `/var/www/web-opt.com` |
+| web-opt.com | `git@bitbucket.org:Geo4orce/web-opt.com.git` | `main` | Laravel 8 + PHP 8.3 + Mix | `/var/www/web-opt.com` |
 | gdice.cc | `git@bitbucket.org:Geo4orce/gdice.git` | `main` | Vue 3 + Vite | `/var/www/gdice` |
 | ezspell.com | `git@bitbucket.org:Geo4orce/ezspell.git` | `main` | Svelte + Webpack | `/var/www/ezspell` |
 
@@ -40,7 +40,7 @@ This is the master infrastructure reference for all 3 projects hosted on the sam
 ```bash
 ssh geo@web-opt.com
 cd /var/www/web-opt.com
-git pull origin master
+git pull origin main
 composer install --no-dev --optimize-autoloader
 php artisan config:cache
 php artisan route:cache
