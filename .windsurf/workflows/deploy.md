@@ -14,7 +14,7 @@ Full pipeline with fail-fast — abort and report on any failure.
 
 4. Push: `git push origin main`
 
-5. SSH deploy: `ssh geo@web-opt.com "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd /var/www/web-opt.com && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm install && npm run prod"`
+5. SSH deploy: `ssh geo@web-opt.com "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd /var/www/web-opt.com && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm ci && npm run prod"`
 
 6. Reload Nginx: `ssh geo@web-opt.com "sudo nginx -t && sudo systemctl reload nginx"`
 
