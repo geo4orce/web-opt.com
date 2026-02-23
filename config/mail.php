@@ -64,7 +64,7 @@ return [
         'address' => env('MAIL_FROM_ADDRESS', 'contact@web-opt.com'),
         'name' => env('MAIL_FROM_NAME', 'Contact Form'),
     ],
-    'contact' => 'contact@web-opt.com',
+    'contact' => env('MAIL_CONTACT', 'geo@web-opt.com'),
 
     /*
     |--------------------------------------------------------------------------
