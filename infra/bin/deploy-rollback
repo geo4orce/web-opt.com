@@ -64,5 +64,13 @@ if [[ "$SITE" == "web-opt.com" ]]; then
   ln -sfn "$SHARED/storage" "$PREV_DIR/storage"
 fi
 
+# ── Write version file ───────────────────────────────────
+PREV_DIR="$SITE_DIR/releases/$PREV"
+if [[ "$SITE" == "web-opt.com" ]]; then
+  echo "$PREV" > "$PREV_DIR/public/version.txt"
+else
+  echo "$PREV" > "$PREV_DIR/version.txt"
+fi
+
 ln -sfn "releases/$PREV" "$CURRENT"
 echo "OK: $SITE rolled back from $ACTIVE to $PREV"
