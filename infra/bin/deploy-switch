@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ── Config ──────────────────────────────────────────────
-SITES="gdice ezspell web-opt.com"
+SITES="gdice.cc ezspell.com web-opt.com"
 WWW="/var/www"
 KEEP=5
 

@@ -14,7 +14,7 @@ server {
 server {
     server_name gdice.cc;
 
-    root /var/www/gdice/current;
+    root /var/www/gdice.cc/current;
     index index.html;
 
     location / {

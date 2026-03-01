@@ -22,19 +22,19 @@ assert_succeeds() {
 
 # ── Validation tests ────────────────────────────────────
 assert_fails "no args"              deploy-switch
-assert_fails "missing version"      deploy-switch gdice
+assert_fails "missing version"      deploy-switch gdice.cc
 assert_fails "bad site"             deploy-switch badsite 1.0.0
-assert_fails "bad semver: alpha"    deploy-switch gdice abc
-assert_fails "bad semver: v-prefix" deploy-switch gdice v1.0.0
-assert_fails "bad semver: 2-part"   deploy-switch gdice 1.0
-assert_fails "bad semver: 4-part"   deploy-switch gdice 1.0.0.1
-assert_fails "bad semver: spaces"   deploy-switch gdice "1.0 .0"
-assert_fails "missing release dir"  deploy-switch gdice 99.99.99
+assert_fails "bad semver: alpha"    deploy-switch gdice.cc abc
+assert_fails "bad semver: v-prefix" deploy-switch gdice.cc v1.0.0
+assert_fails "bad semver: 2-part"   deploy-switch gdice.cc 1.0
+assert_fails "bad semver: 4-part"   deploy-switch gdice.cc 1.0.0.1
+assert_fails "bad semver: spaces"   deploy-switch gdice.cc "1.0 .0"
+assert_fails "missing release dir"  deploy-switch gdice.cc 99.99.99
 
 # ── Functional tests (require temp dir setup) ───────────
 # Create a temporary site structure for testing
 TMPWWW=$(mktemp -d)
-TMPSITE="$TMPWWW/gdice"
+TMPSITE="$TMPWWW/gdice.cc"
 mkdir -p "$TMPSITE/releases/1.0.0"
 echo "index" > "$TMPSITE/releases/1.0.0/index.html"
 mkdir -p "$TMPSITE/releases/1.0.1"

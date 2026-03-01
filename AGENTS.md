@@ -18,8 +18,8 @@ This is the master infrastructure reference for all 3 projects hosted on the sam
 | Site | Repo | Branch | Tech | Server Path |
 |------|------|--------|------|-------------|
 | web-opt.com | `git@bitbucket.org:Geo4orce/web-opt.com.git` | `main` | Laravel 8 + PHP 8.3 + Mix | `/var/www/web-opt.com` |
-| gdice.cc | `git@bitbucket.org:Geo4orce/gdice.git` | `main` | Vue 3 + Vite | `/var/www/gdice` |
-| ezspell.com | `git@bitbucket.org:Geo4orce/ezspell.git` | `main` | Svelte + Webpack | `/var/www/ezspell` |
+| gdice.cc | `git@bitbucket.org:Geo4orce/gdice.git` | `main` | Vue 3 + Vite | `/var/www/gdice.cc` |
+| ezspell.com | `git@bitbucket.org:Geo4orce/ezspell.git` | `main` | Svelte + Webpack | `/var/www/ezspell.com` |
 
 ### Deployment Model (symlink-swap)
 
@@ -55,7 +55,7 @@ All sites use a **symlink-swap release** system. No git, Node, or npm on the ser
 
 | Scope | Owner:Group | Mode |
 |-------|------------|------|
-| Static releases (gdice, ezspell) | `deploy:deploy` | dirs `755`, files `644` |
+| Static releases (gdice.cc, ezspell.com) | `deploy:deploy` | dirs `755`, files `644` |
 | Laravel release files | `deploy:deploy` | dirs `755`, files `644` |
 | `shared/storage/` | `deploy:www-data` | `2775` recursive |
 | `shared/.env` | `deploy:www-data` | `640` |

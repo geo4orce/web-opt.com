@@ -36,7 +36,7 @@ usermod -aG www-data deploy
 ## 4. Directory structure
 
 ```bash
-mkdir -p /var/www/{gdice,ezspell,web-opt.com}/{releases}
+mkdir -p /var/www/{gdice.cc,ezspell.com,web-opt.com}/{releases}
 mkdir -p /var/www/web-opt.com/shared/storage/{app/public,framework/{cache,sessions,views},logs}
 
 chown -R deploy:deploy /var/www

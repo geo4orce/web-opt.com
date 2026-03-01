@@ -14,7 +14,7 @@ server {
 server {
     server_name ezspell.com;
 
-    root /var/www/ezspell/current;
+    root /var/www/ezspell.com/current;
     index index.html;
 
     location / {
