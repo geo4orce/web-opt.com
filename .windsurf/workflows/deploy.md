@@ -24,7 +24,7 @@ Full pipeline with fail-fast — abort and report on any failure.
 
 8. Rsync project to server (excludes .git, node_modules, vendor, storage, .env): `rsync -azP --delete --exclude='.git' --exclude='node_modules' --exclude='vendor' --exclude='storage' --exclude='.env' ./ deploy@web-opt.com:/var/www/web-opt.com/releases/$VERSION/`
 
-9. Switch release (runs composer install, artisan caches, symlinks shared files): `ssh deploy@web-opt.com "web-opt.com $VERSION"`
+9. Switch release (runs composer install, artisan caches, symlinks shared files): `ssh deploy@web-opt.com "deploy-switch web-opt.com $VERSION"`
 
 // turbo
 10. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://web-opt.com/"`

@@ -63,9 +63,23 @@ if [[ "$SITE" == "web-opt.com" ]]; then
   php artisan route:cache
   php artisan view:cache
 
-  # Writable dirs
+fi
+
+# ── Normalize permissions ────────────────────────────────
+find "$RELEASE_DIR" -type d -exec chmod 755 {} +
+find "$RELEASE_DIR" -type f -exec chmod 644 {} +
+
+# ── Laravel writable dirs (after normalize) ─────────────
+if [[ "$SITE" == "web-opt.com" ]]; then
   chown -R deploy:www-data "$RELEASE_DIR/bootstrap/cache"
   chmod -R 2775 "$RELEASE_DIR/bootstrap/cache"
+fi
+
+# ── Write version file ───────────────────────────────────
+if [[ "$SITE" == "web-opt.com" ]]; then
+  echo "$VERSION" > "$RELEASE_DIR/public/version.txt"
+else
+  echo "$VERSION" > "$RELEASE_DIR/version.txt"
 fi
 
 # ── Switch symlink ──────────────────────────────────────
