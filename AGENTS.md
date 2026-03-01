@@ -39,6 +39,8 @@ All sites use a **symlink-swap release** system. No git, Node, or npm on the ser
 - Scripts: `/usr/local/bin/deploy-switch`, `/usr/local/bin/deploy-rollback`
 - Source: `infra/bin/` in this repo (version-controlled)
 - Nginx configs: `infra/nginx/` in this repo
+- Fresh server setup: `infra/setup.md`
+- Deploy script tests: `infra/tests/` (run on server as `deploy` user)
 - Version check: `curl https://<site>/version.txt`
 - Keeps last 5 releases, prunes older ones
 - Rollback: `ssh geo@web-opt.com "sudo -u deploy deploy-rollback <site>"`
@@ -47,7 +49,7 @@ All sites use a **symlink-swap release** system. No git, Node, or npm on the ser
 
 | User | Purpose |
 |------|---------|
-| `geo` | Admin, sudoer. Uses `sudo -u deploy` for deploy ops |
+| `geo` | Admin, sudoer. **Must use `sudo -u deploy`** for any write inside `/var/www/` (deploys, editing `.env`, creating dirs, etc.) |
 | `deploy` | Owns `/var/www/`. Secondary group `www-data`. No sudo |
 | `www-data` | Nginx worker. Reads all files, writes to Laravel storage/cache |
 
