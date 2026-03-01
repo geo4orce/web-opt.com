@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ── Config ──────────────────────────────────────────────
+SITES="gdice ezspell web-opt.com"
+WWW="/var/www"
+KEEP=5
+
+# ── Args ────────────────────────────────────────────────
+SITE="${1:-}"
+VERSION="${2:-}"
+
+if [[ -z "$SITE" || -z "$VERSION" ]]; then
+  echo "Usage: deploy-switch <site> <version>" >&2
+  exit 1
+fi
+
+if ! echo "$SITES" | grep -qw "$SITE"; then
+  echo "ERROR: Unknown site '$SITE'. Valid: $SITES" >&2
+  exit 1
+fi
+
+if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "ERROR: Invalid semver '$VERSION'" >&2
+  exit 1
+fi
+
+SITE_DIR="$WWW/$SITE"
+RELEASE_DIR="$SITE_DIR/releases/$VERSION"
+
+# ── Checks ──────────────────────────────────────────────
+if [[ ! -d "$RELEASE_DIR" ]] || [[ -z "$(ls -A "$RELEASE_DIR")" ]]; then
+  echo "ERROR: Release dir missing or empty: $RELEASE_DIR" >&2
+  exit 1
+fi
+
+CURRENT="$SITE_DIR/current"
+if [[ -L "$CURRENT" ]]; then
+  ACTIVE="$(basename "$(readlink "$CURRENT")")"
+  if [[ "$ACTIVE" == "$VERSION" ]]; then
+    echo "ERROR: $SITE $VERSION is already the active release. Bump version first." >&2
+    exit 1
+  fi
+fi
+
+# ── Laravel shared files & permissions ──────────────────
+if [[ "$SITE" == "web-opt.com" ]]; then
+  SHARED="$SITE_DIR/shared"
+
+  # Symlink .env
+  ln -sfn "$SHARED/.env" "$RELEASE_DIR/.env"
+
+  # Symlink storage
+  rm -rf "$RELEASE_DIR/storage"
+  ln -sfn "$SHARED/storage" "$RELEASE_DIR/storage"
+
+  # Composer install
+  cd "$RELEASE_DIR"
+  composer install --no-dev --optimize-autoloader --no-interaction 2>&1
+
+  # Artisan caches
+  php artisan config:cache
+  php artisan route:cache
+  php artisan view:cache
+
+  # Writable dirs
+  chown -R deploy:www-data "$RELEASE_DIR/bootstrap/cache"
+  chmod -R 2775 "$RELEASE_DIR/bootstrap/cache"
+fi
+
+# ── Switch symlink ──────────────────────────────────────
+ln -sfn "releases/$VERSION" "$CURRENT"
+echo "OK: $SITE switched to $VERSION"
+
+# ── Prune old releases ──────────────────────────────────
+cd "$SITE_DIR/releases"
+mapfile -t RELEASES < <(ls -d [0-9]*.[0-9]*.[0-9]* 2>/dev/null | sort -t. -k1,1n -k2,2n -k3,3n)
+COUNT=${#RELEASES[@]}
+
+if (( COUNT > KEEP )); then
+  PRUNE=$(( COUNT - KEEP ))
+  for (( i=0; i<PRUNE; i++ )); do
+    rm -rf "${RELEASES[$i]}"
+  done
+  echo "  Pruned $PRUNE old release(s), kept last $KEEP"
+fi
