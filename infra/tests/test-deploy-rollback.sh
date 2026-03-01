@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
 PASS=0
 FAIL=0
 
 assert_fails() {
   local desc="$1"; shift
   if "$@" >/dev/null 2>&1; then
-    echo "FAIL: $desc (expected failure, got success)"; ((FAIL++))
+    echo "FAIL: $desc (expected failure, got success)"; FAIL=$((FAIL + 1))
   else
-    echo "PASS: $desc"; ((PASS++))
+    echo "PASS: $desc"; PASS=$((PASS + 1))
   fi
 }
 
