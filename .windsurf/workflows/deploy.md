@@ -1,5 +1,5 @@
 ---
-description: Deploy Web-Opt.com to production (commit, push, build on server)
+description: Deploy Web-Opt.com to production (build locally, rsync, switch release)
 ---
 
 Full pipeline with fail-fast — abort and report on any failure.
@@ -10,13 +10,21 @@ Full pipeline with fail-fast — abort and report on any failure.
 // turbo
 2. Build: `npm run prod`
 
-3. If there are uncommitted changes, stage all and commit with a descriptive message. If clean, skip to step 4.
-
-4. Push: `git push origin main`
-
-5. SSH deploy: `ssh geo@web-opt.com "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd /var/www/web-opt.com && git pull origin main && composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm ci && npm run prod"`
-
-6. Reload Nginx: `ssh geo@web-opt.com "sudo nginx -t && sudo systemctl reload nginx"`
+// turbo
+3. Bump patch version: `npm version patch --no-git-tag-version`
 
 // turbo
-7. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://web-opt.com/"`
+4. Update lockfile after version bump: `npm install --package-lock-only`
+
+5. If there are uncommitted changes, stage all and commit with a descriptive message. If clean, skip to step 6.
+
+6. Push: `git push origin main`
+
+7. Read version from package.json and store in a variable, e.g. `$VERSION = node -e "console.log(require('./package.json').version)"`
+
+8. Rsync project to server (excludes .git, node_modules, vendor, storage, .env): `rsync -azP --delete --exclude='.git' --exclude='node_modules' --exclude='vendor' --exclude='storage' --exclude='.env' ./ deploy@web-opt.com:/var/www/web-opt.com/releases/$VERSION/`
+
+9. Switch release (runs composer install, artisan caches, symlinks shared files): `ssh deploy@web-opt.com "web-opt.com $VERSION"`
+
+// turbo
+10. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://web-opt.com/"`
