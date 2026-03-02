@@ -4,6 +4,8 @@ description: Deploy Web-Opt.com to production (build locally, rsync, switch rele
 
 Full pipeline with fail-fast — abort and report on any failure.
 
+Cascade: Before starting, check memory for when /maintain was last run on web-opt. If >30 days or never, remind user: "Dependencies haven't been updated in over a month. Consider running /maintain first." Don't block — just inform.
+
 // turbo
 1. Tests: `npm test`
 

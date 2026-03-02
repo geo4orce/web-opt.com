@@ -91,6 +91,10 @@ npm run watch
   DB_CONNECTION="sqlite"
   ```
 
+### Workflows
+- `/deploy` — full build, test, push, rsync, release switch
+- `/maintain` — monthly dependency update (npm update, composer update, audit, test, build)
+
 ### Notes
 - Simple brochure site (1 page + contact form email endpoint)
 - No database needed — use `DB_CONNECTION="sqlite"` or remove DB config
