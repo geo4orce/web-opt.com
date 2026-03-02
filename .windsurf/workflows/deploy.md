@@ -10,7 +10,7 @@ Cascade: Before starting, check memory for when /maintain was last run on web-op
 1. Tests: `npm test`
 
 // turbo
-2. Build: `npm run prod`
+2. Build: `npm run build`
 
 // turbo
 3. Bump patch version: `npm version patch --no-git-tag-version`

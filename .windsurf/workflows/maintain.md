@@ -15,7 +15,7 @@ Update all dependencies (npm + composer), audit, test, and push. Run monthly or 
 4. Tests: `npm test`
 
 // turbo
-5. Build: `npm run prod`
+5. Build: `npm run build`
 
 6. Stage all and commit with message: "chore: monthly dependency update"
 

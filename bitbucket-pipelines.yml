@@ -11,7 +11,7 @@ pipelines:
             - apt-get update -qq && apt-get install -y -qq rsync > /dev/null
             - npm ci
             - npm test
-            - npm run prod
+            - npm run build
             - VERSION=$(node -e "console.log(require('./package.json').version)")
             - DEPLOYED=$(curl -sf https://web-opt.com/version.txt || echo "")
             - |
