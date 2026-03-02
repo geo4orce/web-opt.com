@@ -18,7 +18,7 @@ This is the master infrastructure reference for all 3 projects hosted on the sam
 | Site | Repo | Branch | Tech | Server Path |
 |------|------|--------|------|-------------|
 | web-opt.com | `git@bitbucket.org:Geo4orce/web-opt.com.git` | `main` | Laravel 8 + PHP 8.3 + Mix | `/var/www/web-opt.com` |
-| gdice.cc | `git@bitbucket.org:Geo4orce/gdice.git` | `main` | Vue 3 + Vite | `/var/www/gdice.cc` |
+| gdice.cc | `git@bitbucket.org:Geo4orce/gdice.cc.git` | `main` | Vue 3 + Vite | `/var/www/gdice.cc` |
 | ezspell.com | `git@bitbucket.org:Geo4orce/ezspell.git` | `main` | Svelte + Webpack | `/var/www/ezspell.com` |
 
 ### Deployment Model (symlink-swap)

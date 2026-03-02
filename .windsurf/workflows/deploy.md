@@ -1,5 +1,5 @@
 ---
-description: Deploy Web-Opt.com to production (build locally, rsync, switch release)
+description: Deploy Web-Opt.com to production (build locally, bump version, push)
 ---
 
 Full pipeline with fail-fast — abort and report on any failure.
