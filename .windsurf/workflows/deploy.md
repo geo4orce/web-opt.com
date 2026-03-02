@@ -22,11 +22,4 @@ Cascade: Before starting, check memory for when /maintain was last run on web-op
 
 6. Push: `git push origin main`
 
-7. Read version from package.json and store in a variable, e.g. `$VERSION = node -e "console.log(require('./package.json').version)"`
-
-8. Rsync project to server (excludes .git, node_modules, vendor, storage, .env): `rsync -azP --delete --exclude='.git' --exclude='node_modules' --exclude='vendor' --exclude='storage' --exclude='.env' ./ deploy@web-opt.com:/var/www/web-opt.com/releases/$VERSION/`
-
-9. Switch release (runs composer install, artisan caches, symlinks shared files): `ssh deploy@web-opt.com "deploy-switch web-opt.com $VERSION"`
-
-// turbo
-10. Verify: `ssh geo@web-opt.com "curl -s -o /dev/null -w '%{http_code}' https://web-opt.com/"`
+Bitbucket Pipelines auto-deploys after push (builds, rsyncs project, runs deploy-switch with composer/artisan). Monitor at: https://bitbucket.org/Geo4orce/web-opt.com/pipelines

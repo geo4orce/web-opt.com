@@ -35,7 +35,7 @@ All sites use a **symlink-swap release** system. No git, Node, or npm on the ser
 └── shared/        ← web-opt.com only (.env, storage/)
 ```
 
-- **Build locally** → **rsync** to `releases/<version>/` → **`deploy-switch <site> <version>`**
+- Push to `main` triggers **Bitbucket Pipelines**: test → build → rsync → `deploy-switch`
 - Scripts: `/usr/local/bin/deploy-switch`, `/usr/local/bin/deploy-rollback`
 - Source: `infra/bin/` in this repo (version-controlled)
 - Nginx configs: `infra/nginx/` in this repo
@@ -69,10 +69,11 @@ All sites use a **symlink-swap release** system. No git, Node, or npm on the ser
 - **Tech Stack**: Laravel 8 + PHP 8.3-FPM + Laravel Mix (Webpack) + SCSS
 
 ### Deploy
-Use `/deploy` workflow. Summary:
-1. `npm test` → `npm run prod` → bump version → commit → push
-2. `rsync` project to server (excl .git, node_modules, vendor, storage, .env)
-3. `ssh deploy@web-opt.com "web-opt.com <version>"` (runs composer install, artisan caches, symlink switch)
+Push to `main` triggers Bitbucket Pipelines: test → build → rsync → deploy-switch.
+Pipeline config: `bitbucket-pipelines.yml`
+Monitor: https://bitbucket.org/Geo4orce/web-opt.com/pipelines
+
+Local `/deploy` workflow: test → build → bump version → push (pipeline handles the rest)
 
 ### Local Dev
 ```bash
@@ -92,7 +93,7 @@ npm run watch
   ```
 
 ### Workflows
-- `/deploy` — full build, test, push, rsync, release switch
+- `/deploy` — local test, build, bump version, push (pipeline auto-deploys after push)
 - `/maintain` — monthly dependency update (npm update, composer update, audit, test, build)
 
 ### Notes
