@@ -41,9 +41,8 @@ The pre-cutover deployment exists on DigitalOcean App Platform:
 
 - App `web-opt-prod-app`, generated hostname
   `https://web-opt-prod-app-l6ud5.ondigitalocean.app`.
-- Pre-cutover source is branch `codex/migrate-web-opt-static` with autodeploy
-  disabled. Promote the verified commit to `main`, switch both components to
-  `main`, and enable autodeploy before DNS cutover.
+- Both components use GitHub `main` with autodeploy enabled. Production DNS
+  remains on the legacy Droplet until the separate cutover approval.
 - Static component build: `npm ci && npm run verify`; output: `dist`.
 - Functions component source directory: `functions`.
 - Ingress matches `/api/contact-us` and rewrites it to package/function
