@@ -60,9 +60,11 @@ test("shows success immediately while delivery continues in the background", asy
 
 test("keeps the immediate success state when background delivery fails", async () => {
     const dom = renderPage();
+    const errors = [];
     const { form } = initPage({
         documentRef: dom.window.document,
-        fetchImpl: async () => ({ ok: false }),
+        fetchImpl: async () => ({ ok: false, status: 503 }),
+        logger: { error: (message) => { errors.push(message); } },
     });
     form.elements.email.value = "person@example.test";
     form.elements.message.value = "Hello";
@@ -74,6 +76,7 @@ test("keeps the immediate success state when background delivery fails", async (
     assert.equal(form.elements.message.disabled, true);
     assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Message sent.");
     assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), false);
+    assert.deepEqual(errors, ["Contact request failed with status 503."]);
 });
 
 test("opens and closes the mobile navigation", () => {

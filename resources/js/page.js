@@ -4,7 +4,11 @@ function setHidden(elements, hidden) {
     elements.forEach((element) => element.classList.toggle(HIDDEN_CLASS, hidden));
 }
 
-export function initPage({ documentRef = document, fetchImpl = globalThis.fetch } = {}) {
+export function initPage({
+    documentRef = document,
+    fetchImpl = globalThis.fetch,
+    logger = console,
+} = {}) {
     const burger = documentRef.querySelector(".js-burger");
     const closeButtons = [...documentRef.querySelectorAll(".js-contact-close")];
     const contactButton = documentRef.querySelector(".js-contact-btn");
@@ -65,8 +69,16 @@ export function initPage({ documentRef = document, fetchImpl = globalThis.fetch 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
-            void Promise.resolve(request).catch(() => {});
-        } catch {}
+            void Promise.resolve(request)
+                .then((response) => {
+                    if (!response.ok) {
+                        logger.error(`Contact request failed with status ${response.status}.`);
+                    }
+                })
+                .catch(() => { logger.error("Contact request failed due to a network error."); });
+        } catch {
+            logger.error("Contact request failed before it could be sent.");
+        }
     });
 
     return { form, modal, navigation };
