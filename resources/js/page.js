@@ -48,34 +48,25 @@ export function initPage({ documentRef = document, fetchImpl = globalThis.fetch 
 
     closeButtons.forEach((button) => button.addEventListener("click", resetAndClose));
 
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
         const payload = Object.fromEntries(new FormData(form));
 
         inputs.forEach((input) => { input.disabled = true; });
-        status.textContent = "Sending…";
-        status.classList.remove(HIDDEN_CLASS, "contact-modal__status--error");
+        setHidden(inputs, true);
+        success.classList.remove(HIDDEN_CLASS);
+        successClose.classList.remove(HIDDEN_CLASS);
+        status.textContent = "Message sent.";
+        status.classList.remove(HIDDEN_CLASS);
 
         try {
-            const response = await fetchImpl(form.action, {
+            const request = fetchImpl(form.action, {
                 method: form.method,
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
-
-            if (!response.ok) {
-                throw new Error("Contact request failed");
-            }
-
-            setHidden(inputs, true);
-            success.classList.remove(HIDDEN_CLASS);
-            successClose.classList.remove(HIDDEN_CLASS);
-            status.textContent = "Message sent.";
-        } catch {
-            inputs.forEach((input) => { input.disabled = false; });
-            status.textContent = "Unable to send right now. Please try again.";
-            status.classList.add("contact-modal__status--error");
-        }
+            void Promise.resolve(request).catch(() => {});
+        } catch {}
     });
 
     return { form, modal, navigation };

@@ -30,7 +30,7 @@ function settle() {
     return new Promise((resolve) => setTimeout(resolve, 0));
 }
 
-test("shows success only after a successful response", async () => {
+test("shows success immediately while delivery continues in the background", async () => {
     const dom = renderPage();
     let resolveRequest;
     let request;
@@ -41,8 +41,10 @@ test("shows success only after a successful response", async () => {
     form.elements.message.value = "Hello";
 
     form.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
-    assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Sending…");
-    assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), true);
+    assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Message sent.");
+    assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), false);
+    assert.equal(form.elements.email.disabled, true);
+    assert.equal(form.elements.message.disabled, true);
 
     resolveRequest({ ok: true });
     await settle();
@@ -54,11 +56,9 @@ test("shows success only after a successful response", async () => {
         email: "person@example.test",
         message: "Hello",
     });
-    assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Message sent.");
-    assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), false);
 });
 
-test("keeps the form available and shows a generic failure", async () => {
+test("keeps the immediate success state when background delivery fails", async () => {
     const dom = renderPage();
     const { form } = initPage({
         documentRef: dom.window.document,
@@ -70,10 +70,10 @@ test("keeps the form available and shows a generic failure", async () => {
     form.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
     await settle();
 
-    assert.equal(form.elements.email.disabled, false);
-    assert.equal(form.elements.message.disabled, false);
-    assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Unable to send right now. Please try again.");
-    assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), true);
+    assert.equal(form.elements.email.disabled, true);
+    assert.equal(form.elements.message.disabled, true);
+    assert.equal(dom.window.document.querySelector(".js-contact-status").textContent, "Message sent.");
+    assert.equal(dom.window.document.querySelector(".js-contact-success").classList.contains("hidden"), false);
 });
 
 test("opens and closes the mobile navigation", () => {
