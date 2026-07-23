@@ -9,3 +9,11 @@ dist/
 .idea/
 .vscode/
 *.iml
+
+# Retained local artifacts from the former Laravel application.
+/.phpstorm.meta.php
+/_ide_helper.php
+/bootstrap/
+/database/
+/storage/
+/vendor/
