@@ -1,26 +1,31 @@
 # Web-Opt.com
 
-Company website — [web-opt.com](https://web-opt.com/)
+Company website: [web-opt.com](https://web-opt.com/).
 
-Laravel 8 + PHP 8.3 + Laravel Mix + SCSS
+The site is a static HTML/SCSS/JavaScript build using Vite. A DigitalOcean
+Function handles the same-origin contact endpoint and delivers mail through the
+existing Google Workspace SMTP account.
 
-## Local Dev
-```bash
-composer install
-npm install
-php artisan serve
-npm run watch
+## Local development
+
+```powershell
+npm ci
+npm run dev
 ```
 
-## Infrastructure
+Run the complete local verification:
 
-See [`AGENTS.md`](AGENTS.md) for full server/deploy details. Key files:
+```powershell
+npm run verify
+```
 
-- `infra/bin/` — deploy-switch & deploy-rollback scripts
-- `infra/nginx/` — Nginx site configs
-- `infra/setup.md` — fresh server setup guide
-- `infra/tests/` — deploy script smoke tests
+This runs the browser-facing unit tests, contact Function tests, Vite production
+build, and checks the `dist/` output for server source, source maps, and secrets.
 
-## Contact
+The Function source and runtime configuration are under `functions/`. Its SMTP
+values are supplied as encrypted runtime variables in App Platform and must not
+be committed.
 
-[geo@web-opt.com](mailto:geo@web-opt.com)
+Infrastructure and migration status are documented in the separate `infra`
+repository. The local `infra/` directory is retained temporarily as legacy
+droplet rollback reference and is not used by the Vite or App Platform builds.

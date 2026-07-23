@@ -1,0 +1,16 @@
+{
+    "name": "web-opt-contact-function",
+    "version": "1.0.0",
+    "private": true,
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "node --test"
+    },
+    "engines": {
+        "node": ">=24"
+    },
+    "dependencies": {
+        "nodemailer": "^9.0.3"
+    }
+}

@@ -1,0 +1,18 @@
+environment:
+  MAIL_HOST: "${MAIL_HOST}"
+  MAIL_PORT: "${MAIL_PORT}"
+  MAIL_USER: "${MAIL_USER}"
+  MAIL_PASSWORD: "${MAIL_PASSWORD}"
+  MAIL_ENCRYPTION: "${MAIL_ENCRYPTION}"
+  MAIL_TO: "${MAIL_TO}"
+
+packages:
+  - name: api
+    functions:
+      - name: contact-us
+        runtime: nodejs:24
+        main: main
+        web: true
+        limits:
+          timeout: 10000
+          memory: 256

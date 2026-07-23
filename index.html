@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Web-Opt</title>
+    <meta name="description" content="Software Solutions">
+    <meta name="keywords" content="web-opt, software solutions, geo artemenko, www, web site, design, development, optimization, SEO">
+    <meta name="author" content="Geo Artemenko">
+    <meta property="og:title" content="Web-Opt">
+    <meta property="og:description" content="Software Solutions">
+    <meta name="twitter:card" content="summary">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://web-opt.com">
+    <link rel="icon" type="image/png" href="/favicon2.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="module" src="/resources/js/app.js"></script>
+</head>
+<body>
+    <div class="top-navigation">
+        <button type="button" class="top-navigation__burger js-burger" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false"></button>
+        <div class="top-navigation__desktop">
+            <a href="#home" class="top-navigation__link">Home</a>
+            <a href="#work1" class="top-navigation__link">Work 1</a>
+            <a href="#work2" class="top-navigation__link">Work 2</a>
+            <a href="#contact" class="top-navigation__link">Contact</a>
+        </div>
+    </div>
+    <div id="mobile-navigation" class="mobile-navigation hidden js-mobile-navigation">
+        <div class="mobile-navigation__box">
+            <a href="#home" class="mobile-navigation__link">Home</a>
+            <a href="#work1" class="mobile-navigation__link">Work</a>
+            <a href="#contact" class="mobile-navigation__link">Contact</a>
+        </div>
+    </div>
+    <main>
+        <section id="home" class="header">
+            <h1>WEB<span>&bull;</span>OPT</h1>
+            <div class="intro-description">Software Solutions</div>
+        </section>
+        <section id="work1" class="work criteo">
+            <div class="work__box">
+                <h2>Criteo</h2>
+                <p class="work-description">Founded in Paris, Criteo has become a global leader in commerce marketing. Driving this growth: machine-learning technology, data and performance at scale, and measurable ROI for our clients, as well as the ingenuity and spirit worldwide.</p>
+                <div class="spacer"></div>
+                <a href="https://www.criteo.com/" target="_blank" rel="noopener noreferrer" class="inversed">www.criteo.com</a>
+            </div>
+        </section>
+        <section id="work2" class="work weareglow">
+            <div class="work__box">
+                <h2>Glow</h2>
+                <p class="work-description">Award-winning, digital marketing and social media agency based in New York City. Since 1999, GLOW has partnered with high-profile brands and networks to build world-class social and digital campaigns.</p>
+                <div class="spacer"></div>
+                <a href="https://weareglow.com/" target="_blank" rel="noopener noreferrer">www.weareglow.com</a>
+            </div>
+        </section>
+        <section id="contact" class="footer">
+            <div class="footer__box">
+                <h2>Contact</h2>
+                <div class="contact">
+                    <a href="mailto:contact@web-opt.com" class="contact__email">contact@web-opt.com</a>
+                    <div class="contact__phone">+1 (929) 400-3210</div>
+                    <button type="button" class="contact__btn js-contact-btn">Send Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="copyrights">&copy; 2011-<span class="js-current-year">2026</span> Web-Opt, LLC. All rights reserved.</div>
+    <div class="contact-modal js-contact-modal hidden" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <form action="/api/contact-us" method="POST" class="contact-modal__box">
+            <div class="contact-modal__header">
+                <h3 id="contact-modal-title">Contact Us</h3>
+                <button type="button" class="js-contact-close" aria-label="Close contact form"><b aria-hidden="true">&times;</b></button>
+            </div>
+            <input class="contact-modal__name" name="name" placeholder="Your Name" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input class="contact-modal__email js-contact-input" type="email" name="email" placeholder="Your Email" autocomplete="email" maxlength="254" required>
+            <textarea class="contact-modal__message js-contact-input" name="message" placeholder="Your Message" maxlength="5000" required></textarea>
+            <button type="submit" class="contact-modal__submit js-contact-input">SEND</button>
+            <div class="contact-modal__success js-contact-success hidden" aria-hidden="true"></div>
+            <p class="contact-modal__status js-contact-status hidden" role="status" aria-live="polite"></p>
+            <button type="button" class="contact-modal__submit js-contact-close js-contact-success-close hidden">CLOSE</button>
+        </form>
+    </div>
+</body>
+</html>

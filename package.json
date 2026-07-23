@@ -1,21 +1,22 @@
 {
     "name": "web-opt",
-    "version": "1.1.2",
+    "version": "2.0.0",
     "private": true,
+    "type": "module",
     "scripts": {
-        "_info": "echo \"Node: $(node -v)\"; echo \"Npm: $(npm -v)\"; echo \"PHP: $(php -v | head -1)\"; echo \"Mix: $(npx mix --version)\"",
-        "dev": "mix -- --stats-children",
-        "build": "mix --production",
-        "test": "echo 'not yet implemented'; exit 0;",
-        "watch": "mix watch --hot -- --stats-children"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "node --test \"tests-js/**/*.test.*\"",
+        "test:dist": "node --test \"tests-dist/**/*.test.js\"",
+        "verify": "npm test && npm run build && npm run test:dist"
     },
     "engines": {
         "node": ">=24"
     },
     "devDependencies": {
-        "laravel-mix": "^6.0.39",
-        "resolve-url-loader": "^4.0.0",
-        "sass": "^1.44.0",
-        "sass-loader": "^12.4.0"
+        "jsdom": "^29.1.1",
+        "sass": "^1.101.3",
+        "vite": "^8.1.5"
     }
 }
