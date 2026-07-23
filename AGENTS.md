@@ -37,13 +37,17 @@ require a valid email and non-empty message; the visitor address is `Reply-To`.
 
 ## Deployment state
 
-Target deployment is DigitalOcean App Platform:
+The pre-cutover deployment exists on DigitalOcean App Platform:
 
-- GitHub `geo4orce/web-opt.com`, branch `main`, autodeploy enabled.
+- App `web-opt-prod-app`, generated hostname
+  `https://web-opt-prod-app-l6ud5.ondigitalocean.app`.
+- Pre-cutover source is branch `codex/migrate-web-opt-static` with autodeploy
+  disabled. Promote the verified commit to `main`, switch both components to
+  `main`, and enable autodeploy before DNS cutover.
 - Static component build: `npm ci && npm run verify`; output: `dist`.
 - Functions component source directory: `functions`.
-- Ingress routes `/api/contact-us` to package/function `api/contact-us` and `/`
-  to the static component.
+- Ingress matches `/api/contact-us` and rewrites it to package/function
+  `api/contact-us`; `/` routes to the static component.
 - `/qr1` remains a permanent redirect to `https://blinq.me/f5TLMRTbpG0j`.
 - `web-opt.com` is canonical; `www` redirects permanently to the apex.
 
